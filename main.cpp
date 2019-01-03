@@ -23,7 +23,8 @@ int main() {
     game.validateNumber(1, 2);
 
     if (game.getSelection() == 1) {
-        cout << "start game\n";
+        // user plays the game
+        cout << "starting game\n";
 
 
 
