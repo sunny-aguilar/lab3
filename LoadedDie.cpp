@@ -14,6 +14,4 @@ int LoadedDie::randomInt() {
     srand(seed);
     randomNum = rand() % N + 1;
     return randomNum;
-
-    return 0;
 }
