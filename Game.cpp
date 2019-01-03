@@ -141,10 +141,14 @@ bool Game::getDiceType(int player) {
     return playerLoadedDice[player];
 }
 
+/*********************************************************************
+** Description:     asks user for N sides of dice
+*********************************************************************/
 void Game::submenuSides() {
     cout << "Enter the number of sides on the dice\n";
 }
 
+void Game
 
 
 /*********************************************************************

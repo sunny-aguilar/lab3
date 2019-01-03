@@ -6,6 +6,8 @@
 *********************************************************************/
 #ifndef GAME_HPP
 #define GAME_HPP
+#include "Die.hpp"
+#include "LoadedDie.hpp"
 
 class Game {
 public:
@@ -22,6 +24,7 @@ public:
     void setDiceType(int player, int type);
     bool getDiceType(int player);
     void submenuSides();
+    void setSides(Dice &obj);
 
     void submenuGameOver();
 
