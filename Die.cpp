@@ -6,6 +6,7 @@
 *********************************************************************/
 #include "Die.hpp"
 #include <ctime>
+#include <cstdlib>
 
 int Die::randomInt() {       // returns a random integer
     unsigned seed;

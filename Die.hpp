@@ -13,6 +13,8 @@ class Die {
 private:
     int N;                  // number of sides on the die
 public:
+    Die() : N{0} {}
+    Die(int num) { N = num; }
     int randomInt();        // returns a random integer
 };
 

@@ -9,6 +9,11 @@
 #include "Die.hpp"
 
 class LoadedDie : public Die {
+private:
+
+public:
+    LoadedDie() : N{0} {};
+    LoadedDie(int num) { N = num; }
 
 };
 
