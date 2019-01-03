@@ -1,4 +1,9 @@
-
+/*********************************************************************
+** Author:          Sandro Aguilar
+** Date:            Jan 2019
+** Description:     asdf
+**                  asdf
+*********************************************************************/
 #ifndef DIE_HPP
 #define DIE_HPP
 #include <iostream>
