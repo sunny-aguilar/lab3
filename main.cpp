@@ -8,7 +8,7 @@
 #include "LoadedDie.hpp"
 #include "Game.hpp"
 #include <iostream>
-
+using std::cin;
 using std::cout;
 using std::endl;
 
@@ -27,17 +27,26 @@ int main() {
         cout << "starting game\n";
 
         int rounds = 0;
+        bool playAgain;
         do {
 
-            rounds++;
 
+            rounds++;
+            cout << "Round #" << rounds << endl;
             cout << "Hit [Enter] to continue\n";
             cin.get();
 
+            if () {
 
-        } while ();
+            }
+            else {
+
+            }
 
 
+        } while (rounds != 3);
+
+        cout << "Game finished\n";
     }
     else if (game.getSelection() == 2) {
         // user quit the program in the main menu
