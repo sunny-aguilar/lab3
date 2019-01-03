@@ -13,6 +13,8 @@ private:
 public:
     int randomInt() {       // returns a random integer
         unsigned seed;
+        seed = static_cast<unsigned int>(time(nullptr));
+
         return 1;
     }
 };
