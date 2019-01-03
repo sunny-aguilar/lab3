@@ -10,6 +10,7 @@
 class Game {
 public:
     void showStartMenu();
+    int validateNumber(int min, int max);
 
 protected:
 

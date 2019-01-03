@@ -20,6 +20,7 @@ int main() {
 
     Game game;
     game.showStartMenu();
+    game.validateNumber(1, 2);
 
 
     return 0;
