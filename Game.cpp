@@ -98,10 +98,6 @@ int Game::getRounds() {
     return rounds;
 }
 
-void Game::newRound() {
-    rounds++;
-}
-
 void Game::submenuReplay() {
     cout << "1. Play again\n"
          << "2. End game\n";

@@ -19,10 +19,12 @@ int main() {
 //    cout << "Loaded Die " << loadedDie.randomInt() << endl;
 
     Game game;
+
+    // show main menu and validate selection entered
     game.showStartMenu();
     game.setSelection( game.validateNumber(1, 2) );
 
-
+    // begin the game
     if (game.getSelection() == 1) {
         // user plays the game
         cout << "starting game\n";
@@ -30,16 +32,16 @@ int main() {
 
         bool playAgain;
         do {
-
+            // ask user how many rounds to play
             game.submenuRounds();
             game.setRounds( game.validateNumber(1, 1000) );
-            cout << "Round saved " << game.getRounds() << endl;
+            cout << "Rounds saved " << game.getRounds() << endl;
 
+            // loop through the rounds to play
             for (int round = 0; round < game.getRounds(); round++) {
-                cout << "Round #" << counter << endl;
+                cout << "Round #" << round+1 << endl;
                 cout << "Hit [Enter] to continue\n";
                 cin.get();
-                game.newRound();
 
 
             }
@@ -47,7 +49,7 @@ int main() {
 
             // ask user if they want to play again
             game.submenuReplay();
-            game.validateNumber(1, 2);
+            game.setSelection( game.validateNumber(1, 2) );
             if (game.getSelection() == 2) {
                 // control statement to play again
                 cout << "Thanks for playing!\n";
