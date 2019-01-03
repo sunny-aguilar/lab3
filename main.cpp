@@ -13,7 +13,7 @@ using std::endl;
 
 int main() {
     Die die(6);
-    LoadedDie loadedDie(1);
+    LoadedDie loadedDie(6);
     cout << "Die " << die.randomInt() << endl;
     cout << "Loaded Die " << loadedDie.randomInt() << endl;
 

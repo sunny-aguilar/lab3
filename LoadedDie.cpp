@@ -7,6 +7,9 @@
 #include "LoadedDie.hpp"
 #include <ctime>
 
+LoadedDie::LoadedDie() : Die{0} {};
+LoadedDie::LoadedDie(int num) : Die{num} {}
+
 int LoadedDie::randomInt() {
     unsigned seed;
     int randomNum;
