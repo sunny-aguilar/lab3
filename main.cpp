@@ -13,9 +13,11 @@ private:
 public:
     int randomInt() {       // returns a random integer
         unsigned seed;
+        int randomNum;
         seed = static_cast<unsigned int>(time(nullptr));
-
-        return 1;
+        srand(seed);
+        randomNum = rand() % N + 1;
+        return randomNum;
     }
 };
 class LoadedDie {};
