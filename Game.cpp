@@ -107,6 +107,9 @@ int Game::getRounds() {
     return rounds;
 }
 
+void Game::submenuDiceType() {
+    cout << "Enter the type of die to use for player 1\n";
+}
 
 /*********************************************************************
 ** Description:     asks user if they want to play again

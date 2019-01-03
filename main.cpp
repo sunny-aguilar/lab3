@@ -35,10 +35,9 @@ int main() {
             // ask user how many rounds to play
             game.submenuRounds();
             game.setRounds( game.validateNumber(1, 1000) );
-            cout << "Rounds saved " << game.getRounds() << endl;
 
             //  ask user the type of die for each player
-
+            game.submenuDiceType();
 
             // ask user for number of sides for dice of both players
 
