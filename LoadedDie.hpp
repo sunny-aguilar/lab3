@@ -9,12 +9,13 @@
 #include "Die.hpp"
 
 class LoadedDie : public Die {
-private:
-
 public:
     LoadedDie();
     LoadedDie(int num);
     int randomInt();
+
+private:
+
 };
 
 #endif
