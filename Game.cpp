@@ -11,6 +11,8 @@ using std::cin;
 using std::cout;
 using std::endl;
 
+Game::Game() : selection{0} {}
+
 void Game::showStartMenu() {
     cout << "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n"
          << "Enter 1 to play - Enter 2 to exit\n"
@@ -20,11 +22,19 @@ void Game::showStartMenu() {
          << ">> ";
 }
 
+void Game::setSelection(int sel) {
+    selection = sel;
+}
+
+int Game::getSelection() {
+    return selection;
+}
+
 /*********************************************************************
 ** Description:     general validator where the parameters are the
 **                  min and max numbers acceptable
 *********************************************************************/
-int Game::validateNumber(int min, int max) {
+void Game::validateNumber(int min, int max) {
     char choice[100];
     int amount = 0;
     std::stringstream convert;
@@ -34,7 +44,6 @@ int Game::validateNumber(int min, int max) {
 
     // determine # of digits in max value acceptable
     long unsigned length = std::to_string(max).length();
-
 
     do {
 //        cout << "Enter an integer between " <<  min << " and " << max << endl;
@@ -66,21 +75,12 @@ int Game::validateNumber(int min, int max) {
             convert << choice;
             convert >> amount;
 
-//            if (amount >= min && amount <= max) {
-////                cout << "You entered " << amount << endl;
-//            }
-//            else {
-//                notInRange = true;
-//                cout << "enter a number between 1 or 2!\n";
-//            }
-
             if (amount < min || amount > max) {
                 notInRange = true;
                 cout << "enter a number between 1 or 2!\n";
             }
-
         }
     } while (tooLong || isNotDigit || notInRange);
 
-//    return amount;
+    setSelection(amount);
 }

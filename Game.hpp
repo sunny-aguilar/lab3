@@ -9,10 +9,14 @@
 
 class Game {
 public:
+    Game();
     void showStartMenu();
-    int validateNumber(int min, int max);
+    void validateNumber(int min, int max);
+    void setSelection(int sel);
+    int getSelection();
 
 protected:
+    int selection;
 
 };
 
