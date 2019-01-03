@@ -124,13 +124,14 @@ void Game::submenuDiceType(int player) {
 void Game::setDiceType(int player, int type) {
     switch (type) {
         case 1:
+            playerLoadedDice[player] = false;
             break;
         case 2:
+            playerLoadedDice[player] = true;
             break;
         default:
             cout << "Error setting the dice type\n";
     }
-    playerLoadedDice[player] = type;
 }
 
 /*********************************************************************

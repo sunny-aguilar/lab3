@@ -40,7 +40,7 @@ int main() {
             for (int player = 0; player < 2; player++) {
                 game.submenuDiceType(player+1);
                 game.setSelection( game.validateNumber(1, 2) );
-                game.setDiceType( game.getSelection() );
+                game.setDiceType( game.getSelection(), game.getSelection(  ) );
             }
 
 
