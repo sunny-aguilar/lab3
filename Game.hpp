@@ -21,6 +21,7 @@ public:
     void submenuDiceType(int player);
     void setDiceType(int player, int type);
     bool getDiceType(int player);
+    void submenuSides();
 
     void submenuGameOver();
 

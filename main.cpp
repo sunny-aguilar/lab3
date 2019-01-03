@@ -44,9 +44,8 @@ int main() {
                 cout << "Player #" << player << " dice type " << game.getDiceType(player) << endl;
             }
 
-
             // ask user for number of sides for dice of both players
-
+            game.submenuSides();
 
             // loop through the rounds to play
             for (int round = 0; round < game.getRounds(); round++) {

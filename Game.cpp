@@ -141,6 +141,11 @@ bool Game::getDiceType(int player) {
     return playerLoadedDice[player];
 }
 
+void Game::submenuSides() {
+    cout << "Enter the number of sides on the dice\n";
+}
+
+
 
 /*********************************************************************
 ** Description:     asks user if they want to play again
