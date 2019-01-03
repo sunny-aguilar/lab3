@@ -102,3 +102,13 @@ void Game::submenuReplay() {
     cout << "1. Play again\n"
          << "2. End game\n";
 }
+
+void Game::submenuGameOver() {
+    cout << "---------  ---------  ---------\n"
+         << "|o      |  |o     o|  |o     o|\n"
+         << "|   o   |  |       |  |   o   |\n"
+         << "|      o|  |o     o|  |o     o|\n"
+         << "---------  ---------  ---------\n";
+
+    cout << "Thanks for playing!\n";
+}

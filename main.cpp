@@ -58,7 +58,7 @@ int main() {
             game.setSelection( game.validateNumber(1, 2) );
             if (game.getSelection() == 2) {
                 // control statement to play again
-                cout << "Thanks for playing!\n";
+                game.submenuGameOver();
                 playAgain = false;
             }
             else {
