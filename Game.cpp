@@ -86,7 +86,8 @@ int Game::validateNumber(int min, int max) {
 }
 
 void Game::submenuRounds() {
-    cout << "How many rounds do you want to play?\n";
+    cout << "How many rounds do you want to play?\n"
+         << "Pick between 1 and 1000 rounds\n";
 }
 
 void Game::setRounds(int rounds) {

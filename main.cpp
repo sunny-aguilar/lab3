@@ -27,12 +27,13 @@ int main() {
         // user plays the game
         cout << "starting game\n";
 
-        int counter = 0;
+
         bool playAgain;
         do {
 
             game.submenuRounds();
             game.setRounds( game.validateNumber(1, 1000) );
+            cout << "Round saved " << game.getRounds() << endl;
 
             for (int round = 0; round < game.getRounds(); round++) {
                 cout << "Round #" << counter << endl;
@@ -40,7 +41,7 @@ int main() {
                 cin.get();
                 game.newRound();
 
-                counter++;
+
             }
 
 
