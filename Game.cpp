@@ -11,7 +11,7 @@ using std::cin;
 using std::cout;
 using std::endl;
 
-Game::Game() : selection{0}, rounds{0} {}
+Game::Game() : selection{0}, rounds{0}, playerLoadedDice{false} {}
 
 void Game::showStartMenu() {
     cout << "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n"
@@ -107,9 +107,28 @@ int Game::getRounds() {
     return rounds;
 }
 
+/*********************************************************************
+** Description:     asks user to enter dice type for each player
+*********************************************************************/
 void Game::submenuDiceType() {
     cout << "Enter the type of die to use for player 1\n";
 }
+
+/*********************************************************************
+** Description:     takes a bool parameter to indicate if dice is
+**                  loaded
+*********************************************************************/
+void Game::setDiceType(bool type) {
+    playerLoadedDice = type;
+}
+
+/*********************************************************************
+** Description:     returns player dice type
+*********************************************************************/
+bool Game::getDiceType() {
+    return playerLoadedDice;
+}
+
 
 /*********************************************************************
 ** Description:     asks user if they want to play again

@@ -19,11 +19,15 @@ public:
     void setRounds(int rounds);
     int getRounds();
     void submenuDiceType();
+    void setDiceType(bool type);
+    bool getDiceType();
+
     void submenuGameOver();
 
 protected:
     int selection;
     int rounds;
+    bool playerLoadedDice;
 
 };
 

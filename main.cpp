@@ -37,7 +37,10 @@ int main() {
             game.setRounds( game.validateNumber(1, 1000) );
 
             //  ask user the type of die for each player
-            game.submenuDiceType();
+            for (int player = 0; player < 2; player++) {
+                game.submenuDiceType();
+            }
+
 
             // ask user for number of sides for dice of both players
 
