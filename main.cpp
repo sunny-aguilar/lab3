@@ -27,21 +27,21 @@ int main() {
         // user plays the game
         cout << "starting game\n";
 
-        int rounds = 0;
+        int counter = 0;
         bool playAgain;
         do {
 
             game.submenuRounds();
             game.setRounds( game.validateNumber(1, 1000) );
 
+            for (int round = 0; round < game.getRounds(); round++) {
+                cout << "Round #" << counter << endl;
+                cout << "Hit [Enter] to continue\n";
+                cin.get();
+                game.newRound();
 
-
-            rounds++;
-            cout << "Round #" << rounds << endl;
-            cout << "Hit [Enter] to continue\n";
-            cin.get();
-
-
+                counter++;
+            }
 
 
             // ask user if they want to play again
