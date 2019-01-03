@@ -89,6 +89,10 @@ void Game::submenuRounds() {
     cout << "How many rounds do you want to play?\n";
 }
 
+void Game::setRounds(int rounds) {
+    this->rounds = rounds;
+}
+
 void Game::submenuReplay() {
     cout << "1. Play again\n"
          << "2. End game\n";

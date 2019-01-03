@@ -31,6 +31,9 @@ int main() {
         do {
 
             game.submenuRounds();
+            game.validateNumber(1, 1000);
+
+
             rounds++;
             cout << "Round #" << rounds << endl;
             cout << "Hit [Enter] to continue\n";

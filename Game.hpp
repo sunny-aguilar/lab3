@@ -16,6 +16,7 @@ public:
     int getSelection();
     void submenuReplay();
     void submenuRounds();
+    void setRounds(int rounds);
 
 protected:
     int selection;
