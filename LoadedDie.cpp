@@ -17,8 +17,18 @@ int LoadedDie::randomInt() {
     srand(seed);
     randomNum = rand() % N + 1;
 
+    if (rollValue >= 0 && rollValue <=25) {
 
+    }
+    else if (rollValue > 25 && rollValue <= 50) {
 
+    }
+    else if (rollValue > 50 && rollValue <= 75) {
+
+    }
+    else if (rollValue > 75) {
+
+    }
 
     return randomNum;
 }
