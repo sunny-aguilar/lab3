@@ -20,7 +20,8 @@ int main() {
 
     Game game;
     game.showStartMenu();
-    game.validateNumber(1, 2);
+    game.setSelection( game.validateNumber(1, 2) );
+
 
     if (game.getSelection() == 1) {
         // user plays the game
@@ -31,7 +32,8 @@ int main() {
         do {
 
             game.submenuRounds();
-            game.validateNumber(1, 1000);
+            game.setRounds( game.validateNumber(1, 1000) );
+
 
 
             rounds++;

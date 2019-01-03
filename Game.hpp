@@ -11,12 +11,13 @@ class Game {
 public:
     Game();
     void showStartMenu();
-    void validateNumber(int min, int max);
+    int validateNumber(int min, int max);
     void setSelection(int sel);
     int getSelection();
     void submenuReplay();
     void submenuRounds();
     void setRounds(int rounds);
+    int getRounds();
 
 protected:
     int selection;

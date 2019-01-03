@@ -34,7 +34,7 @@ int Game::getSelection() {
 ** Description:     general validator where the parameters are the
 **                  min and max numbers acceptable
 *********************************************************************/
-void Game::validateNumber(int min, int max) {
+int Game::validateNumber(int min, int max) {
     char choice[100];
     int amount = 0;
     std::stringstream convert;
@@ -82,7 +82,7 @@ void Game::validateNumber(int min, int max) {
         }
     } while (tooLong || isNotDigit || notInRange);
 
-    setSelection(amount);
+    return amount;
 }
 
 void Game::submenuRounds() {
@@ -91,6 +91,10 @@ void Game::submenuRounds() {
 
 void Game::setRounds(int rounds) {
     this->rounds = rounds;
+}
+
+int Game::getRounds() {
+    return rounds;
 }
 
 void Game::submenuReplay() {
