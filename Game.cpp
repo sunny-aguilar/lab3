@@ -121,7 +121,15 @@ void Game::submenuDiceType(int player) {
 ** Description:     takes a bool parameter to indicate if dice is
 **                  loaded
 *********************************************************************/
-void Game::setDiceType(int player {
+void Game::setDiceType(int player, int type) {
+    switch (type) {
+        case 1:
+            break;
+        case 2:
+            break;
+        default:
+            cout << "Error setting the dice type\n";
+    }
     playerLoadedDice[player] = type;
 }
 

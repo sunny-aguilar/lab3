@@ -19,7 +19,7 @@ public:
     void setRounds(int rounds);
     int getRounds();
     void submenuDiceType(int player);
-    void setDiceType(int player);
+    void setDiceType(int player, int type);
     void getDiceType(int player);
 
     void submenuGameOver();
