@@ -20,7 +20,7 @@ public:
     int getRounds();
     void submenuDiceType(int player);
     void setDiceType(int player, int type);
-    void getDiceType(int player);
+    bool getDiceType(int player);
 
     void submenuGameOver();
 

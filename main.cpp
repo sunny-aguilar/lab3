@@ -40,7 +40,8 @@ int main() {
             for (int player = 0; player < 2; player++) {
                 game.submenuDiceType(player+1);
                 game.setSelection( game.validateNumber(1, 2) );
-                game.setDiceType( game.getSelection(), game.getSelection(  ) );
+                game.setDiceType( player, game.getSelection() );
+                cout << "Player #" << player << " dice type " << game.getDiceType(player) << endl;
             }
 
 
