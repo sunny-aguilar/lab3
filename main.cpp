@@ -5,8 +5,17 @@
 **                  asdf
 *********************************************************************/
 #include <iostream>
+#include <ctime>
 
-class Die {};
+class Die {
+private:
+    int N;                  // number of sides on the die
+public:
+    int randomInt() {       // returns a random integer
+        unsigned seed;
+        return 1;
+    }
+};
 class LoadedDie {};
 
 int main() {
