@@ -26,6 +26,16 @@ int main() {
         // user plays the game
         cout << "starting game\n";
 
+        int rounds = 0;
+        do {
+
+            rounds++;
+
+            cout << "Hit [Enter] to continue\n";
+            cin.get();
+
+
+        } while ();
 
 
     }
