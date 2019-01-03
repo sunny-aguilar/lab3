@@ -36,6 +36,9 @@ int main() {
             cout << "Hit [Enter] to continue\n";
             cin.get();
 
+
+
+
             // ask user if they want to play again
             game.submenuReplay();
             game.validateNumber(1, 2);
@@ -47,9 +50,8 @@ int main() {
             else {
                 playAgain = true;
             }
-
-
         } while (playAgain);
+
 
         cout << "Game finished\n";
     }
