@@ -20,6 +20,7 @@ public:
         return randomNum;
     }
 };
+
 class LoadedDie : public Die {
 
 };
