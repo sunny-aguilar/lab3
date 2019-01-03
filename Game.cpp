@@ -65,14 +65,22 @@ int Game::validateNumber(int min, int max) {
             convert.clear();
             convert << choice;
             convert >> amount;
-        }
-        else {
+
+//            if (amount >= min && amount <= max) {
+////                cout << "You entered " << amount << endl;
+//            }
+//            else {
+//                notInRange = true;
+//                cout << "enter a number between 1 or 2!\n";
+//            }
+
             if (amount < min || amount > max) {
                 notInRange = true;
                 cout << "enter a number between 1 or 2!\n";
             }
+
         }
     } while (tooLong || isNotDigit || notInRange);
 
-    return amount;
+//    return amount;
 }
