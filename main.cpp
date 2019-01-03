@@ -20,8 +20,15 @@ int main() {
 
     Game game;
     game.showStartMenu();
-    game.validateNumber(1, 2);
 
+
+    if (game.validateNumber(1, 2) == 1) {
+        cout << "start game\n";
+    }
+    else {
+        // user quit the program in the main menu
+        cout << "Goodbye\n";
+    }
 
     return 0;
 }
