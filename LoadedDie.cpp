@@ -7,7 +7,7 @@
 #include "LoadedDie.hpp"
 #include <ctime>
 
-int randomInt() {
+int LoadedDie::randomInt() {
     unsigned seed;
     int randomNum;
     seed = static_cast<unsigned int>(time(nullptr));

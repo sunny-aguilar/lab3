@@ -12,8 +12,8 @@ class LoadedDie : public Die {
 private:
 
 public:
-    LoadedDie() : N{0} {};
-    LoadedDie(int num) { N = num; }
+    LoadedDie() : Die{0} {};
+    LoadedDie(int num) : Die{num} {}
     int randomInt();
 };
 
