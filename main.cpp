@@ -36,15 +36,20 @@ int main() {
             cout << "Hit [Enter] to continue\n";
             cin.get();
 
-            if () {
-
+            // ask user if they want to play again
+            game.submenuReplay();
+            game.validateNumber(1, 2);
+            if (game.getSelection() == 2) {
+                // control statement to play again
+                cout << "Thanks for playing!\n";
+                playAgain = false;
             }
             else {
-
+                playAgain = true;
             }
 
 
-        } while (rounds != 3);
+        } while (playAgain);
 
         cout << "Game finished\n";
     }

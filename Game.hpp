@@ -14,6 +14,7 @@ public:
     void validateNumber(int min, int max);
     void setSelection(int sel);
     int getSelection();
+    void submenuReplay();
 
 protected:
     int selection;

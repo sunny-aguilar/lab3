@@ -84,3 +84,8 @@ void Game::validateNumber(int min, int max) {
 
     setSelection(amount);
 }
+
+void Game::submenuReplay() {
+    cout << "1. Play again\n"
+         << "2. End game\n";
+}
