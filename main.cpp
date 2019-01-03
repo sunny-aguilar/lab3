@@ -41,7 +41,6 @@ int main() {
                 game.submenuDiceType(player+1);
                 game.setSelection( game.validateNumber(1, 2) );
                 game.setDiceType( player, game.getSelection() );
-                cout << "Player #" << player << " dice type " << game.getDiceType(player) << endl;
             }
 
             // ask user for number of sides for dice of both players
