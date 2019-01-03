@@ -13,11 +13,10 @@ protected:
     int N;                  // number of sides on the die
 
 public:
-    Die() : N{0} {}
-    Die(int num) { N = num; }
+    Die();
+    Die(int num);
     int randomInt();        // returns a random integer
-    void setN(int n) { N = n;}
-    void getN() { std::cout << N << std::endl; }
+
 };
 
 #endif
