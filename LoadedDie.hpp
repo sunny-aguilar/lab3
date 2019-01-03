@@ -14,7 +14,7 @@ private:
 public:
     LoadedDie() : N{0} {};
     LoadedDie(int num) { N = num; }
-
+    int randomInt();
 };
 
 #endif
