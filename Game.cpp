@@ -111,22 +111,24 @@ int Game::getRounds() {
 ** Description:     asks user to enter dice type for each player
 *********************************************************************/
 void Game::submenuDiceType(int player) {
-    cout << "Enter the type of die to use for player #"
-         << player << endl;
+    cout << "Enter the type of die to use for player #" << player
+         << "\n1. Normal Dice\n"
+         << "2. Loaded Dice\n";
+
 }
 
 /*********************************************************************
 ** Description:     takes a bool parameter to indicate if dice is
 **                  loaded
 *********************************************************************/
-void Game::setDiceType(int player) {
-//    playerLoadedDice = type;
+void Game::setDiceType(int player, bool type) {
+    playerLoadedDice[player] = type;
 }
 
 /*********************************************************************
 ** Description:     returns player dice type
 *********************************************************************/
-char Game::getDiceType(int player) {
+bool Game::getDiceType(int player) {
     return playerLoadedDice[player];
 }
 

@@ -20,14 +20,14 @@ public:
     int getRounds();
     void submenuDiceType(int player);
     void setDiceType(int player);
-    char getDiceType(int player);
+    bool getDiceType(int player);
 
     void submenuGameOver();
 
 protected:
     int selection;
     int rounds;
-    char playerLoadedDice[2];
+    bool playerLoadedDice[2];
 
 };
 
