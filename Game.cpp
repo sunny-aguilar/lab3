@@ -11,7 +11,7 @@ using std::cin;
 using std::cout;
 using std::endl;
 
-Game::Game() : selection{0}, rounds{0}, playerLoadedDice{false} {}
+Game::Game() : selection{0}, rounds{0} {}
 
 void Game::showStartMenu() {
     cout << "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n"
@@ -119,15 +119,15 @@ void Game::submenuDiceType(int player) {
 ** Description:     takes a bool parameter to indicate if dice is
 **                  loaded
 *********************************************************************/
-void Game::setDiceType(bool type) {
-    playerLoadedDice = type;
+void Game::setDiceType(int player) {
+//    playerLoadedDice = type;
 }
 
 /*********************************************************************
 ** Description:     returns player dice type
 *********************************************************************/
-bool Game::getDiceType() {
-    return playerLoadedDice;
+char Game::getDiceType(int player) {
+    return playerLoadedDice[player];
 }
 
 
