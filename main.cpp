@@ -20,7 +20,9 @@ public:
         return randomNum;
     }
 };
-class LoadedDie {};
+class LoadedDie : public Die {
+
+};
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
