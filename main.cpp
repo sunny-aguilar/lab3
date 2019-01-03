@@ -37,12 +37,18 @@ int main() {
             game.setRounds( game.validateNumber(1, 1000) );
             cout << "Rounds saved " << game.getRounds() << endl;
 
+            //  ask user the type of die for each player
+
+
+            // ask user for number of sides for dice of both players
+
+
             // loop through the rounds to play
             for (int round = 0; round < game.getRounds(); round++) {
+
                 cout << "Round #" << round+1 << endl;
                 cout << "Hit [Enter] to continue\n";
                 cin.get();
-
 
             }
 
