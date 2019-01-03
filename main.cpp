@@ -30,7 +30,7 @@ int main() {
         bool playAgain;
         do {
 
-
+            game.submenuRounds();
             rounds++;
             cout << "Round #" << rounds << endl;
             cout << "Hit [Enter] to continue\n";

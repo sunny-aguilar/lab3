@@ -11,7 +11,7 @@ using std::cin;
 using std::cout;
 using std::endl;
 
-Game::Game() : selection{0} {}
+Game::Game() : selection{0}, rounds{0} {}
 
 void Game::showStartMenu() {
     cout << "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n"

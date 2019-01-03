@@ -19,6 +19,7 @@ public:
 
 protected:
     int selection;
+    int rounds;
 
 };
 
