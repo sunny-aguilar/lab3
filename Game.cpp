@@ -110,8 +110,9 @@ int Game::getRounds() {
 /*********************************************************************
 ** Description:     asks user to enter dice type for each player
 *********************************************************************/
-void Game::submenuDiceType() {
-    cout << "Enter the type of die to use for player 1\n";
+void Game::submenuDiceType(int player) {
+    cout << "Enter the type of die to use for player #"
+         << player << endl;
 }
 
 /*********************************************************************

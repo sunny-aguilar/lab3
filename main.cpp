@@ -38,7 +38,8 @@ int main() {
 
             //  ask user the type of die for each player
             for (int player = 0; player < 2; player++) {
-                game.submenuDiceType();
+                game.submenuDiceType(player+1);
+
             }
 
 
