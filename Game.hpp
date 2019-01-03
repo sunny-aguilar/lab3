@@ -18,6 +18,7 @@ public:
     void submenuRounds();
     void setRounds(int rounds);
     int getRounds();
+    void submenuDiceType();
     void submenuGameOver();
 
 protected:

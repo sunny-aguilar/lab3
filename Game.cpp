@@ -85,24 +85,40 @@ int Game::validateNumber(int min, int max) {
     return amount;
 }
 
+/*********************************************************************
+** Description:     asks user to enter the rounds to play
+*********************************************************************/
 void Game::submenuRounds() {
     cout << "How many rounds do you want to play?\n"
          << "Pick between 1 and 1000 rounds\n";
 }
 
+/*********************************************************************
+** Description:     takes an int parameter to set the rounds
+*********************************************************************/
 void Game::setRounds(int rounds) {
     this->rounds = rounds;
 }
 
+/*********************************************************************
+** Description:     returns the rounds to play
+*********************************************************************/
 int Game::getRounds() {
     return rounds;
 }
 
+
+/*********************************************************************
+** Description:     asks user if they want to play again
+*********************************************************************/
 void Game::submenuReplay() {
     cout << "1. Play again\n"
          << "2. End game\n";
 }
 
+/*********************************************************************
+** Description:     thanks user for playing the game
+*********************************************************************/
 void Game::submenuGameOver() {
     cout << "---------  ---------  ---------\n"
          << "|o      |  |o     o|  |o     o|\n"
