@@ -44,7 +44,7 @@ int Game::validateNumber(int min, int max) {
         tooLong = false;
         if (strlen(choice) > length) {
             tooLong = true;
-            cout << "enter a number between 1 and 2!\n";
+            cout << "enter only one number!\n";
         }
 
         // check if all characters entered are digits
