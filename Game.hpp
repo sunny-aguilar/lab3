@@ -28,6 +28,7 @@ public:
     void submenuSides();
     void setSides(Die &obj, int sides);
     void setSides(LoadedDie &obj, int sides);
+    void setSidesChosenDice(Die &obj1, LoadedDie &obj2);
 
     void submenuGameOver();
 

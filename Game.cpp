@@ -164,6 +164,26 @@ void Game::setSides(LoadedDie &obj, int sides) {
     obj.setSides(sides);
 }
 
+void Game::setSidesChosenDice(Die &obj1, LoadedDie &obj2) {
+    for (int player = 0; player < 2; player++) {
+        if (getDiceType(player) == NORMAL) {
+            setSides( obj1, validateNumber(3, 20) );
+            cout << "Sides stored in Die object " << obj1.getSides() << endl;
+        }
+        else if (getDiceType(player) == LOADED) {
+            setSides( obj2, validateNumber(3, 20) );
+            cout << "Sides stored in loadedDie object " << obj2.getSides() << endl;
+        }
+        else {
+            cout << "Error setting the number of sides!\n";
+        }
+    }
+}
+
+
+
+
+
 /*********************************************************************
 ** Description:     asks user if they want to play again
 *********************************************************************/
