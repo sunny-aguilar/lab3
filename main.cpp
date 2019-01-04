@@ -44,7 +44,7 @@ int main() {
             }
 
             // ask user for number of sides for dice of both players
-            game.submenuSides();
+//            game.submenuSides();
             game.setSidesChosenDice(die, loadedDie);
 
             // loop through the rounds to play
@@ -52,20 +52,20 @@ int main() {
 
                 // roll player 1 and player 2 dice via for loop
                 // player 1 rolls dice and store results in game in
-                for (int player = 1; player <= 2; player++) {
+                for (int player = 0; player < 2; player++) {
                     if (game.getDiceType(player) == NORMAL) {
-                        if (player == 1) {
+                        if (player == 0) {
                             game.setplayerOneScore( die.randomInt() );
                         }
-                        else if (player == 2) {
+                        else if (player == 1) {
                             game.setplayerTwoScore( die.randomInt() );
                         }
                     }
                     else if (game.getDiceType(player) == LOADED) {
-                        if (player == 1) {
+                        if (player == 0) {
                             game.setplayerOneScore( loadedDie.randomInt() );
                         }
-                        else if (player == 2) {
+                        else if (player == 1) {
                             game.setplayerTwoScore( loadedDie.randomInt() );
                         }
                     }
