@@ -71,10 +71,6 @@ int main() {
                     }
                 }
 
-
-
-
-
                 // output results
                 // type of die and # of sides
                 // number each player rolls

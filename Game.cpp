@@ -190,7 +190,7 @@ void Game::setSidesChosenDice(Die &obj1, LoadedDie &obj2) {
 **                  score
 *********************************************************************/
 void Game::setplayerOneScore(int score) {
-    playerOneScore = score;
+    playerOneScore += score;
 }
 
 /*********************************************************************
@@ -198,7 +198,7 @@ void Game::setplayerOneScore(int score) {
 **                  score
 *********************************************************************/
 void Game::setplayerTwoScore(int score) {
-    playerTwoScore = score;
+    playerTwoScore += score;
 }
 
 /*********************************************************************
