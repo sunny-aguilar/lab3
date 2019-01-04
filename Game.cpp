@@ -126,9 +126,11 @@ void Game::setDiceType(int player, int type) {
     switch (type) {
         case 1:
             playerLoadedDice[player] = false;
+            diceType[1] = NORMAL;
             break;
         case 2:
             playerLoadedDice[player] = true;
+            diceType[2] = LOADED;
             break;
         default:
             cout << "Error setting the dice type\n";

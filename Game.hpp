@@ -35,7 +35,7 @@ protected:
     int selection;
     int rounds;
     bool playerLoadedDice[2];
-    enum Dice type[2];
+    Dice diceType[2];
 
 };
 
