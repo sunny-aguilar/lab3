@@ -47,6 +47,7 @@ int main() {
             game.submenuSides();
             game.setSides( die, game.validateNumber(3, 20) );
 
+
             // CONTINUE HERE
 
 
