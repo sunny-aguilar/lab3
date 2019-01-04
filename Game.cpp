@@ -11,7 +11,7 @@ using std::cin;
 using std::cout;
 using std::endl;
 
-Game::Game() : selection{0}, rounds{0}, diceType{UNSET, UNSET} {}
+Game::Game() : selection{0}, rounds{0}, diceType{UNSET, UNSET}, playerOneScore{0}, playerTwoScore{0} {}
 
 void Game::showStartMenu() {
     cout << "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n"

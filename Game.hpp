@@ -35,7 +35,8 @@ protected:
     int selection;
     int rounds;
     Dice diceType[2];
-
+    int playerOneScore;
+    int playerTwoScore;
 };
 
 #endif

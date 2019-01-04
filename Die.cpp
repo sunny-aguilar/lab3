@@ -6,6 +6,8 @@
 *********************************************************************/
 #include "Die.hpp"
 #include <ctime>
+#include <vector>
+using std::vector;
 
 Die::Die() : N{0} {}
 

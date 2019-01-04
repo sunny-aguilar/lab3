@@ -46,6 +46,7 @@ int main() {
             // ask user for number of sides for dice of both players
             game.submenuSides();
             game.setSides( die, game.validateNumber(3, 20) );
+            game.setSides( loadedDie, game.validateNumber(3, 20) );
             cout << "Sides stored in Die object " << die.getSides() << endl;
             // CONTINUE HERE
 
@@ -55,6 +56,16 @@ int main() {
 
             // loop through the rounds to play
             for (int round = 0; round < game.getRounds(); round++) {
+                die.randomInt();
+                loadedDie.randomInt();
+                // roll player 1 and player 2 dice
+
+                // output results
+                // type of die and # of sides
+                // number each player rolls
+                // score result
+                // afterwards, display the final score count
+                // display final winner
 
                 cout << "Round #" << round+1 << endl;
                 cout << "Hit [Enter] to continue\n";
