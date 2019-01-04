@@ -52,14 +52,14 @@ int main() {
 
                 // roll player 1 and player 2 dice via for loop
                 // player 1 rolls dice and store results in game in
-                for () {
+                for (int player = 1; player < 2; player++) {
 
                 }
 
-                if (game.getDiceType(1) == NORMAL) {
+                if (game.getDiceType(player) == NORMAL) {
                     die.randomInt();
                 }
-                else if (game.getDiceType(1) == LOADED) {
+                else if (game.getDiceType(player) == LOADED) {
                     loadedDie.randomInt();
                 }
 
