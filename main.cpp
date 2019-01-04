@@ -73,6 +73,10 @@ int main() {
 
                 // output results
                 // type of die and # of sides
+                cout << "Player One dice being used is " << game.getDiceType(0) << endl;
+                cout << "Player Two dice being used is " << game.getDiceType(1) << endl;
+                cout << "Player One Score is " << game.getplayerOneScore() << endl;
+                cout << "Player Two Score is " << game.getplayerTwoScore() << endl;
                 // number each player rolls
                 // score result
                 // afterwards, display the final score count
