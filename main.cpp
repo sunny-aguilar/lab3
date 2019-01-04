@@ -50,15 +50,17 @@ int main() {
             // loop through the rounds to play
             for (int round = 0; round < game.getRounds(); round++) {
 
-                // roll player 1 and player 2 dice
+                // roll player 1 and player 2 dice via for loop
                 // player 1 rolls dice and store results in game in
-                die.randomInt();            // select the right die to roll
-                loadedDie.randomInt();
-                if (game.getDiceType(1) == NORMAL) {
+                for () {
 
                 }
+
+                if (game.getDiceType(1) == NORMAL) {
+                    die.randomInt();
+                }
                 else if (game.getDiceType(1) == LOADED) {
-                    
+                    loadedDie.randomInt();
                 }
 
 
