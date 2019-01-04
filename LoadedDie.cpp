@@ -18,7 +18,7 @@ int LoadedDie::randomInt() {
     seed = static_cast<unsigned int>(time(nullptr));
     srand(seed);
     randomNum = rand() % N + 1;
-
+    std::cout << "Score rolled is " << randomNum << std::endl;
     int rollNum = Die::randomInt();   // call to over-ridden function in base class
 
 //    if (rollValue >= 0 && rollValue <=25) {
