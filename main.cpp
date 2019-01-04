@@ -54,6 +54,7 @@ int main() {
                 die.randomInt();            // select the right die to roll
                 loadedDie.randomInt();
 
+                
                 // output results
                 // type of die and # of sides
                 // number each player rolls
