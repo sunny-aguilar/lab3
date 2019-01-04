@@ -55,18 +55,18 @@ int main() {
                 for (int player = 0; player < 2; player++) {
                     if (game.getDiceType(player) == NORMAL) {
                         if (player == 0) {
-                            game.setplayerOneScore( die.randomInt() );
+                            game.addplayerOneScore( die.randomInt() );
                         }
                         else if (player == 1) {
-                            game.setplayerTwoScore( die.randomInt() );
+                            game.addplayerTwoScore( die.randomInt() );
                         }
                     }
                     else if (game.getDiceType(player) == LOADED) {
                         if (player == 0) {
-                            game.setplayerOneScore( loadedDie.randomInt() );
+                            game.addplayerOneScore( loadedDie.randomInt() );
                         }
                         else if (player == 1) {
-                            game.setplayerTwoScore( loadedDie.randomInt() );
+                            game.addplayerTwoScore( loadedDie.randomInt() );
                         }
                     }
                     cout << "Hit [Enter] to continue\n";
@@ -103,6 +103,8 @@ int main() {
                 playAgain = true;
                 game.setplayerOneScore(0);
                 game.setplayerTwoScore(0);
+                cout << "P1 score after reset " << game.getplayerOneScore() << endl;
+                cout << "P2 score after reset " << game.getplayerTwoScore() << endl;
             }
         } while (playAgain);
 

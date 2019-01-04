@@ -191,7 +191,7 @@ void Game::setSidesChosenDice(Die &obj1, LoadedDie &obj2) {
 **                  score
 *********************************************************************/
 void Game::setplayerOneScore(int score) {
-    playerOneScore += score;
+    playerOneScore = score;
 }
 
 /*********************************************************************
@@ -199,6 +199,22 @@ void Game::setplayerOneScore(int score) {
 **                  score
 *********************************************************************/
 void Game::setplayerTwoScore(int score) {
+    playerTwoScore = score;
+}
+
+/*********************************************************************
+** Description:     parameter takes an int value to add to player one
+**                  score
+*********************************************************************/
+void Game::addplayerOneScore(int score) {
+    playerOneScore += score;
+}
+
+/*********************************************************************
+** Description:     parameter takes an int value to add to player two
+**                  score
+*********************************************************************/
+void Game::addplayerTwoScore(int score) {
     playerTwoScore += score;
 }
 
