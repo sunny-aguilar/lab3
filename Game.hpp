@@ -24,7 +24,7 @@ public:
     int getRounds();
     void submenuDiceType(int player);
     void setDiceType(int player, int type);
-    bool getDiceType(int player);
+    Dice getDiceType(int player);
     void submenuSides();
     void setSides(Die &obj, int sides);
     void setSides(LoadedDie &obj, int sides);

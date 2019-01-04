@@ -138,7 +138,7 @@ void Game::setDiceType(int player, int type) {
 /*********************************************************************
 ** Description:     returns player dice type
 *********************************************************************/
-bool Game::getDiceType(int player) {
+Dice Game::getDiceType(int player) {
     return diceType[player];
 }
 
