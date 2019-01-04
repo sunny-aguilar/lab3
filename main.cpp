@@ -52,7 +52,7 @@ int main() {
 
                 // roll player 1 and player 2 dice via for loop
                 // player 1 rolls dice and store results in game in
-                for (int player = 1; player < 2; player++) {
+                for (int player = 1; player <= 2; player++) {
                     if (game.getDiceType(player) == NORMAL) {
                         if (player == 1) {
                             game.setplayerOneScore( die.randomInt() );
@@ -99,6 +99,8 @@ int main() {
             }
             else {
                 playAgain = true;
+                game.setplayerOneScore(0);
+                game.setplayerTwoScore(0);
             }
         } while (playAgain);
 
