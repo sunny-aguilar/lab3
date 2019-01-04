@@ -25,7 +25,7 @@ public:
     bool getDiceType(int player);
     void submenuSides();
     void setSides(Die &obj);
-    void setSides(LoadedDie &obj);
+    void getSides(LoadedDie &obj);
 
     void submenuGameOver();
 

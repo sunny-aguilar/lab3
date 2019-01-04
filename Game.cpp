@@ -152,6 +152,9 @@ void Game::setSides(Die &obj) {
 
 }
 
+void Game::getSides(LoadedDie &obj) {
+
+}
 
 /*********************************************************************
 ** Description:     asks user if they want to play again
