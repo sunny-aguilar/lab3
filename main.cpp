@@ -58,7 +58,7 @@ int main() {
                             game.setplayerOneScore( die.randomInt() );
                         }
                         else if (player == 2) {
-                            
+                            game.setplayerTwoScore( die.randomInt() );
                         }
                     }
                     else if (game.getDiceType(player) == LOADED) {
