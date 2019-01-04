@@ -62,12 +62,11 @@ int main() {
                         }
                     }
                     else if (game.getDiceType(player) == LOADED) {
-                        loadedDie.randomInt();
-                        if (player == 2) {
+                        if (player == 1) {
 
                         }
-                        else {
-                            
+                        else if (player == 2) {
+
                         }
                     }
                 }
