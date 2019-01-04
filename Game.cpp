@@ -158,7 +158,7 @@ void Game::setSides(Die &obj) {
 /*********************************************************************
 ** Description:     param takes a loaded dice object to set its sides
 *********************************************************************/
-void Game::getSides(LoadedDie &obj) {
+void Game::setSides(LoadedDie &obj) {
 
 }
 
