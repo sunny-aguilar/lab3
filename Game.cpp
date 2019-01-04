@@ -148,10 +148,16 @@ void Game::submenuSides() {
     cout << "Enter the number of sides on the dice\n";
 }
 
+/*********************************************************************
+** Description:     param takes a dice object to set its sides
+*********************************************************************/
 void Game::setSides(Die &obj) {
 
 }
 
+/*********************************************************************
+** Description:     param takes a loaded dice object to set its sides
+*********************************************************************/
 void Game::getSides(LoadedDie &obj) {
 
 }
