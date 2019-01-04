@@ -46,8 +46,7 @@ int main() {
             // ask user for number of sides for dice of both players
             game.submenuSides();
             game.setSides( die, game.validateNumber(3, 20) );
-
-
+            cout << "Sides stored in Die object " << die.getSides() << endl;
             // CONTINUE HERE
 
 
@@ -82,7 +81,8 @@ int main() {
     }
     else if (game.getSelection() == 2) {
         // user quit the program in the main menu
-        cout << "Goodbye\n";
+//        cout << "Goodbye\n";
+        game.submenuGameOver();
     }
     else {
         cout << "Error processing your request!\n";

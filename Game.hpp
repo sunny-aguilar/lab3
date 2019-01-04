@@ -9,6 +9,8 @@
 #include "Die.hpp"
 #include "LoadedDie.hpp"
 
+enum Dice {UNSET, NORMAL, LOADED};
+
 class Game {
 public:
     Game();
@@ -33,6 +35,7 @@ protected:
     int selection;
     int rounds;
     bool playerLoadedDice[2];
+    enum Dice type[2];
 
 };
 

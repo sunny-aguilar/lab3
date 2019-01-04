@@ -11,7 +11,7 @@ using std::cin;
 using std::cout;
 using std::endl;
 
-Game::Game() : selection{0}, rounds{0} {}
+Game::Game() : selection{0}, rounds{0}, type{UNSET, UNSET} {}
 
 void Game::showStartMenu() {
     cout << "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n"
@@ -77,7 +77,8 @@ int Game::validateNumber(int min, int max) {
 
             if (amount < min || amount > max) {
                 notInRange = true;
-                cout << "enter a number between 1 or 2!\n";
+                cout << "enter a number between "
+                     << min << " or " << max << endl;
             }
         }
     } while (tooLong || isNotDigit || notInRange);
@@ -176,10 +177,10 @@ void Game::submenuReplay() {
 *********************************************************************/
 void Game::submenuGameOver() {
     cout << "---------  ---------  ---------\n"
-         << "|o      |  |o     o|  |o     o|\n"
+         << "| o     |  | o   o |  | o   o |\n"
          << "|   o   |  |       |  |   o   |\n"
-         << "|      o|  |o     o|  |o     o|\n"
+         << "|     o |  | o   o |  | o   o |\n"
          << "---------  ---------  ---------\n";
 
-    cout << "Thanks for playing!\n";
+    cout << "Goodbye - Thanks for playing!\n";
 }
