@@ -45,9 +45,20 @@ int main() {
 
             // ask user for number of sides for dice of both players
             game.submenuSides();
+            for (int player = 0; player < 2; player++) {
+                if (game.getDiceType(player) == NORMAL) {
+                    game.setSides( die, game.validateNumber(3, 20) );
+                    cout << "Sides stored in Die object " << die.getSides() << endl;
+                }
+                else if (game.getDiceType(player) == LOADED) {
+                    game.setSides( loadedDie, game.validateNumber(3, 20) );
+                    cout << "Sides stored in loadedDie object " << loadedDie.getSides() << endl;
+                }
+                else {
+                    cout << "Error setting the number of sides!\n";
+                }
+            }
 
-            game.setSides( loadedDie, game.validateNumber(3, 20) );
-            cout << "Sides stored in Die object " << loadedDie.getSides() << endl;
             // CONTINUE HERE
 
 
