@@ -69,6 +69,8 @@ int main() {
                             game.setplayerTwoScore( loadedDie.randomInt() );
                         }
                     }
+                    cout << "Hit [Enter] to continue\n";
+                    cin.get();
                 }
 
                 // output results
