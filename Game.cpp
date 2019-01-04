@@ -11,7 +11,7 @@ using std::cin;
 using std::cout;
 using std::endl;
 
-Game::Game() : selection{0}, rounds{0}, type{UNSET, UNSET} {}
+Game::Game() : selection{0}, rounds{0}, diceType{UNSET, UNSET} {}
 
 void Game::showStartMenu() {
     cout << "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n"
@@ -126,11 +126,11 @@ void Game::setDiceType(int player, int type) {
     switch (type) {
         case 1:
             playerLoadedDice[player] = false;
-            diceType[1] = NORMAL;
+            diceType[0] = NORMAL;
             break;
         case 2:
             playerLoadedDice[player] = true;
-            diceType[2] = LOADED;
+            diceType[1] = LOADED;
             break;
         default:
             cout << "Error setting the dice type\n";
