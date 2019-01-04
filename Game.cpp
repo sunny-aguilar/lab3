@@ -185,9 +185,35 @@ void Game::setSidesChosenDice(Die &obj1, LoadedDie &obj2) {
     }
 }
 
+/*********************************************************************
+** Description:     parameter takes an int value to set player one
+**                  score
+*********************************************************************/
+void Game::setplayerOneScore(int score) {
 
+}
 
+/*********************************************************************
+** Description:     parameter takes an int value to set player two
+**                  score
+*********************************************************************/
+void Game::setplayerTwoScore(int score) {
 
+}
+
+/*********************************************************************
+** Description:    gets the score of player one
+*********************************************************************/
+int Game::getplayerOneScore() {
+    return playerOneScore;
+}
+
+/*********************************************************************
+** Description:    gets the score of player two
+*********************************************************************/
+int Game::getplayerTwoScore() {
+    return playerTwoScore;
+}
 
 /*********************************************************************
 ** Description:     asks user if they want to play again

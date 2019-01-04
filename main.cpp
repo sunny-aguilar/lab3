@@ -51,10 +51,11 @@ int main() {
             for (int round = 0; round < game.getRounds(); round++) {
 
                 // roll player 1 and player 2 dice
+                // player 1 rolls dice and store results in game in
                 die.randomInt();            // select the right die to roll
                 loadedDie.randomInt();
 
-                
+
                 // output results
                 // type of die and # of sides
                 // number each player rolls
