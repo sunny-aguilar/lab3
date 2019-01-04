@@ -54,9 +54,8 @@ int main() {
                 // player 1 rolls dice and store results in game in
                 for (int player = 1; player < 2; player++) {
                     if (game.getDiceType(player) == NORMAL) {
-                        game.setplayerOneScore( die.randomInt() );
                         if (player == 1) {
-
+                            game.setplayerOneScore( die.randomInt() );
                         }
                         else if (player == 2) {
                             
