@@ -17,6 +17,8 @@ int LoadedDie::randomInt() {
     srand(seed);
     randomNum = rand() % N + 1;
 
+    Die::randomInt();   // call to over-riden function in base class
+
 //    if (rollValue >= 0 && rollValue <=25) {
 //
 //    }
