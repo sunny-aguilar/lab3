@@ -125,12 +125,10 @@ void Game::submenuDiceType(int player) {
 void Game::setDiceType(int player, int type) {
     switch (type) {
         case 1:
-            playerLoadedDice[player] = false;
-            diceType[0] = NORMAL;
+            diceType[player] = NORMAL;
             break;
         case 2:
-            playerLoadedDice[player] = true;
-            diceType[1] = LOADED;
+            diceType[player] = LOADED;
             break;
         default:
             cout << "Error setting the dice type\n";
@@ -141,7 +139,7 @@ void Game::setDiceType(int player, int type) {
 ** Description:     returns player dice type
 *********************************************************************/
 bool Game::getDiceType(int player) {
-    return playerLoadedDice[player];
+    return diceType[player];
 }
 
 /*********************************************************************
