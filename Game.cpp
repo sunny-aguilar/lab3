@@ -152,7 +152,7 @@ void Game::submenuSides() {
 ** Description:     param takes a dice object to set its sides
 *********************************************************************/
 void Game::setSides(Die &obj) {
-
+    &
 }
 
 /*********************************************************************
