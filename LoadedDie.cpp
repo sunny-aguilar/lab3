@@ -21,6 +21,16 @@ int LoadedDie::randomInt() {
     std::cout << "Score rolled is " << randomNum << std::endl;
     int rollNum = Die::randomInt();   // call to over-ridden function in base class
 
+//    Create an array and using the 1-N array and store such that elements up to N
+//    are increased as shown in the diagram
+//    1,
+//    22,
+//    333,
+//    4444,
+//    5555,
+//    666666
+
+//      I dont think i'll use this code below
 //    if (rollValue >= 0 && rollValue <=25) {
 //
 //    }
