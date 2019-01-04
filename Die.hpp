@@ -13,6 +13,8 @@ public:
     Die();
     Die(int num);
     int randomInt();        // returns a random integer
+    void setSides(int sides);
+    int getSides();
 
 protected:
     int N;                  // number of sides on the die

@@ -19,3 +19,11 @@ int Die::randomInt() {       // returns a random integer
     randomNum = rand() % N + 1;
     return randomNum;
 }
+
+void Die::setSides(int sides) {
+    N = sides;
+}
+
+int Die::getSides() {
+    return N;
+}

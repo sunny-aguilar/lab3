@@ -151,15 +151,15 @@ void Game::submenuSides() {
 /*********************************************************************
 ** Description:     param takes a dice object to set its sides
 *********************************************************************/
-void Game::setSides(Die &obj) {
-    &
+void Game::setSides(Die &obj, int sides) {
+    obj.setSides(sides);
 }
 
 /*********************************************************************
 ** Description:     param takes a loaded dice object to set its sides
 *********************************************************************/
-void Game::setSides(LoadedDie &obj) {
-
+void Game::setSides(LoadedDie &obj, int sides) {
+    obj.setSides(sides);
 }
 
 /*********************************************************************

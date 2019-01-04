@@ -45,6 +45,8 @@ int main() {
 
             // ask user for number of sides for dice of both players
             game.submenuSides();
+            game.setSides( die, game.validateNumber(3, 20) );
+
             // CONTINUE HERE
 
 
