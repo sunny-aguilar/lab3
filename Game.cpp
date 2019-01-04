@@ -148,7 +148,9 @@ void Game::submenuSides() {
     cout << "Enter the number of sides on the dice\n";
 }
 
-void Game
+void Game::setSides(Die &obj) {
+
+}
 
 
 /*********************************************************************
