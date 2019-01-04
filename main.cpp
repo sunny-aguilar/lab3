@@ -63,10 +63,10 @@ int main() {
                     }
                     else if (game.getDiceType(player) == LOADED) {
                         if (player == 1) {
-
+                            game.setplayerOneScore( loadedDie.randomInt() );
                         }
                         else if (player == 2) {
-
+                            game.setplayerTwoScore( loadedDie.randomInt() );
                         }
                     }
                 }
