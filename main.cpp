@@ -54,6 +54,11 @@ int main() {
                 // player 1 rolls dice and store results in game in
                 die.randomInt();            // select the right die to roll
                 loadedDie.randomInt();
+                if (game.getDiceType(1)) {
+                    
+                }
+
+
 
 
                 // output results
