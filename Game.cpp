@@ -16,8 +16,7 @@ using std::string;
 
 /*********************************************************************
 ** Description:     no-args default constructor that sets the member
-**                  variables and also calls the
-**                  base class no-args constructor
+**                  variables
 *********************************************************************/
 Game::Game() : selection{0}, rounds{0}, diceType{UNSET, UNSET}, playerOneScore{0}, playerTwoScore{0} {}
 
