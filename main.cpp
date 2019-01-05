@@ -60,7 +60,6 @@ int main() {
                 p1RollScore = game.getRollValue(p1RollScore, p1RollScore, die, loadedDie, 1);
                 p2RollScore = game.getRollValue(p2RollScore, p2RollScore, die, loadedDie, 2);
 
-
                 // update winner score
                 std::string winner;
                 winner = game.updatePlayerScore(p1RollScore, p2RollScore);
