@@ -223,7 +223,7 @@ int Game::getRollValue(Die &obj1, LoadedDie &obj2) {
                 return obj1.randomInt();
             }
             else if (player == 1) {
-                p2RollScore = obj1.randomInt();
+                return obj1.randomInt();
             }
         }
         else if (.getDiceType(player) == LOADED) {
