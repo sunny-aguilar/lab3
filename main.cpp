@@ -56,8 +56,8 @@ int main() {
 
                 // roll dice for player 1 and player 2 and assign values to variables
                 int p1RollScore = 0, p2RollScore = 0;
-                p1RollScore = game.getRollValue(p1RollScore, p1RollScore, die, loadedDie, 1);
-                p2RollScore = game.getRollValue(p2RollScore, p2RollScore, die, loadedDie, 2);
+                p1RollScore = game.getRollValue(die, loadedDie, 1);
+                p2RollScore = game.getRollValue(die, loadedDie, 2);
 
                 // update winner score
                 std::string winner;

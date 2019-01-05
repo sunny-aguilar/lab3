@@ -215,8 +215,14 @@ void Game::setSidesChosenDice(Die &obj1, LoadedDie &obj2)
     }
 }
 
-
-int Game::getRollValue(int &p1RollScore, int &p2RollScore, Die &obj1, LoadedDie &obj2, int player) {
+/*********************************************************************
+** Description:     function returns a random int value from either a
+**                  normal die or a loaded die depending on the die
+ *                  selected by the players. Takes Dice object
+ *                  parameters by reference and assigns the resulting
+ *                  values to p1RollScore /p2RollScore
+*********************************************************************/
+int Game::getRollValue(Die &obj1, LoadedDie &obj2, int player) {
     if (getDiceType(player) == NORMAL) {
             if (player == 0) {
                 return obj1.randomInt();
