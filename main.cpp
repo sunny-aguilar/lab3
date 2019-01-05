@@ -58,7 +58,7 @@ int main() {
                 // roll player 1 and player 2 dice via for loop
                 // players roll dice and store results in game.p1Score or p2Score
                 int p1RollScore = 0, p2RollScore = 0;
-                std::string winner;
+
 
                 // get random integer for each player
                 for (int player = 0; player < 2; player++) {
@@ -81,6 +81,7 @@ int main() {
                 }
 
                 // update winner score
+                std::string winner;
                 winner = game.updatePlayerScore(p1RollScore, p2RollScore);
 
                 // display game results after each round

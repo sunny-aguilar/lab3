@@ -194,8 +194,7 @@ void Game::setSides(LoadedDie &obj, int sides)
 
 /*********************************************************************
 ** Description:     parameters take two objects by reference of each
-**                  type of die class to set the number of sides as
-**                  appropriate
+**                  type of die class object to set the number of sides
 *********************************************************************/
 void Game::setSidesChosenDice(Die &obj1, LoadedDie &obj2)
 {

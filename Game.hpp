@@ -26,7 +26,6 @@ public:
     void submenuDiceType(int player);
     void setDiceType(int player, int type);
     Dice getDiceType(int player);
-    void submenuSides(int player);
     void setSides(Die &obj, int sides);
     void setSides(LoadedDie &obj, int sides);
     void setSidesChosenDice(Die &obj1, LoadedDie &obj2);
@@ -47,6 +46,9 @@ protected:
     Dice diceType[2];
     int playerOneScore;
     int playerTwoScore;
+
+private:
+    void submenuSides(int player);
 };
 
 #endif
