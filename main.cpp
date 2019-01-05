@@ -55,11 +55,8 @@ int main() {
             // loop through the rounds to play
             for (int round = 0; round < game.getRounds(); round++) {
 
-                // roll player 1 and player 2 dice via for loop
-                // players roll dice and store results in game.p1Score or p2Score
+                // roll dice for player 1 and player 2 and assign values to variables
                 int p1RollScore = 0, p2RollScore = 0;
-
-                // get random integer for each player
                 p1RollScore = game.getRollValue(p1RollScore, p1RollScore, die, loadedDie, 1);
                 p2RollScore = game.getRollValue(p2RollScore, p2RollScore, die, loadedDie, 2);
 
