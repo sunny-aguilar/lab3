@@ -43,7 +43,7 @@ public:
 
 protected:
     int selection;                          // hold selection made
-    int rounds;
+    int rounds;                             // hold rounds to play
     Dice diceType[2];
     int playerOneScore;
     int playerTwoScore;
