@@ -20,7 +20,7 @@ public:
     int validateNumber(int min, int max);       // validate data
     void setSelection(int sel);                 // setter of selection
     int getSelection();                         // getter of selection
-    void submenuRounds();
+    void submenuRounds();                       // show rounds menu
     void setRounds(int rounds);
     int getRounds();
     void submenuDiceType(int player);
