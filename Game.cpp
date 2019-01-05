@@ -402,7 +402,6 @@ void Game::submenuGameOver()
          << "| o     |  | o   o |  | o   o |\n"
          << "|   o   |  |       |  |   o   |\n"
          << "|     o |  | o   o |  | o   o |\n"
-         << "---------  ---------  ---------\n";
-
-    cout << "Goodbye - Thanks for playing!\n";
+         << "---------  ---------  ---------\n"
+         << "Goodbye - Thanks for playing!\n";
 }
