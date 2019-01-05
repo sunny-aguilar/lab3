@@ -13,6 +13,9 @@ Die::Die() : N{0} {}
 
 Die::Die(int num) : N{num} { N = num; }
 
+/*********************************************************************
+** Description:     A
+*********************************************************************/
 int Die::randomInt() {       // returns a random integer
     unsigned seed;
     int randomNum;
