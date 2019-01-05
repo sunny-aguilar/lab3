@@ -45,6 +45,9 @@ void Game::setSelection(int sel)
     selection = sel;
 }
 
+/*********************************************************************
+** Description:     getter sgets the selection made in the main menu
+*********************************************************************/
 int Game::getSelection()
 {
     return selection;
