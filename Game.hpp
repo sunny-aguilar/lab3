@@ -29,6 +29,9 @@ public:
     void setSides(Die &obj, int sides);
     void setSides(LoadedDie &obj, int sides);
     void setSidesChosenDice(Die &obj1, LoadedDie &obj2);
+
+    int getRollValue(Die &obj1, LoadedDie &obj2);
+
     void setplayerOneScore(int score);
     void setplayerTwoScore(int score);
     string updatePlayerScore(int p1Roll, int p2Roll);
