@@ -22,9 +22,9 @@ Die::Die() : N{0} {}
 Die::Die(int num) : N{num} { N = num; }
 
 /*********************************************************************
-** Description:     A
+** Description:     returns a random integer from 1 to N
 *********************************************************************/
-int Die::randomInt() {       // returns a random integer
+int Die::randomInt() {
     unsigned seed;
     int randomNum;
     seed = static_cast<unsigned int>(time(nullptr));
