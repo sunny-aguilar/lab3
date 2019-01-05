@@ -56,7 +56,10 @@ int LoadedDie::randomInt() {
     // algorithm to taken N int values and change them so that the average
     // output of rolling it out is higher than the die object with the same
     // number of sides
-    for (int n = 1; n <= N; n++ ) {
+    int val = ((N + 1) * N) / 2;
+    std::cout << "Arithmetic Val " << val << std::endl;
+
+    for (int n = 1; n <= val; n++ ) {
         for ( int x = 1; x <= n; x++) {
             loadedValues.push_back( n );
         }
@@ -65,7 +68,7 @@ int LoadedDie::randomInt() {
 
     // display N int values in vector
     std::cout << "Displaying loaded vector values:  ";
-    for (int n = 0; n < N; n++) {
+    for (int n = 0; n < val; n++) {
         std::cout << loadedValues[n] << " ";
     }
     std::cout << std::endl;
