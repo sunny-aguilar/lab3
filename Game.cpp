@@ -215,6 +215,13 @@ void Game::setSidesChosenDice(Die &obj1, LoadedDie &obj2)
     }
 }
 
+
+
+
+
+
+
+
 /*********************************************************************
 ** Description:     parameter takes an int value to set player one
 **                  score
