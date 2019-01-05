@@ -18,7 +18,7 @@ int LoadedDie::randomInt() {
     seed = static_cast<unsigned int>(time(nullptr));
     srand(seed);
     randomNum = rand() % N + 1;
-    std::cout << "Score rolled is " << randomNum << std::endl;
+    std::cout << " score rolled is " << randomNum << std::endl;
     int rollNum = Die::randomInt();   // call to over-ridden function in base class
 
 //    Create an array and using the 1-N array and store such that elements up to N
@@ -56,6 +56,7 @@ int LoadedDie::randomInt() {
     // algorithm to taken N int values and change them so that the average
     // output of rolling it out is higher than the die object with the same
     // number of sides
+    std::cout << "Displaying loaded vector values:  ";
     for (int n = 1; n <= N; n++) {
         loadedValues.push_back( load(n) );
     }
@@ -71,11 +72,8 @@ int LoadedDie::randomInt() {
 }
 
 int LoadedDie::load(int n) {
-    if (n == 1) {
-        return 1;
+    if (N >= n) {
+        load(n++);
     }
-    else if (n <= N) {
-        n++;
-        load(n);
-    }
+    return n;
 }
