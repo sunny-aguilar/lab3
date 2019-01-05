@@ -19,7 +19,7 @@ Die::Die() : N{0} {}
 ** Description:     1-arg constructor that takes an int parameter to
 **                  set the number of sides on the die
 *********************************************************************/
-Die::Die(int num) : N{num} { N = num; }
+Die::Die(int num) : N{num} { setSides(num); }
 
 /*********************************************************************
 ** Description:     returns a random integer from 1 to N
@@ -34,7 +34,7 @@ int Die::randomInt() {
 }
 
 /*********************************************************************
-** Description:     A
+** Description:     takes an int parameter to set the sides of N
 *********************************************************************/
 void Die::setSides(int sides) {
     N = sides;
