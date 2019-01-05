@@ -91,8 +91,7 @@ int main() {
                 cin.get();
 
             }
-
-
+            
 
             // ask user if they want to play again
             game.submenuReplay();
