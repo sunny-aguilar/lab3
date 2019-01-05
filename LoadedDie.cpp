@@ -56,15 +56,17 @@ int LoadedDie::randomInt() {
     // algorithm to taken N int values and change them so that the average
     // output of rolling it out is higher than the die object with the same
     // number of sides
-
-    for (int n = 1; n <= 1; n++) {
-        loadedValues.push_back( load(n) );
+    for (int n = 1; n <= N; n++ ) {
+        for ( int x = 1; x <= n; x++) {
+            loadedValues.push_back( n );
+        }
     }
+
 
     // display N int values in vector
     std::cout << "Displaying loaded vector values:  ";
     for (int n = 0; n < N; n++) {
-        std::cout << diceValues[n] << " ";
+        std::cout << loadedValues[n] << " ";
     }
     std::cout << std::endl;
 
@@ -72,12 +74,14 @@ int LoadedDie::randomInt() {
     return randomNum;
 }
 
-int LoadedDie::load(int n) {
-    std::cout << "Size N " << N << std::endl;
-    std::cout << "Size n " << n << std::endl;
-    if (N >= n) {
-        load(n+1);
-        std::cout << "recursive n value!\n";
-    }
-    return n;
-}
+//int LoadedDie::load(int n) {
+//    std::cout << "Size N " << N << std::endl;
+//    std::cout << "Size n " << n << std::endl;
+//    if (N >= n) {
+//        load(n+1);
+//        std::cout << "recursive n value!\n";
+//    }
+
+
+//    return n;
+//}

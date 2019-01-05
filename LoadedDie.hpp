@@ -15,7 +15,7 @@ public:
     int randomInt();
 
 private:
-    int load(int n);
+//    int load(int n);
 };
 
 #endif
