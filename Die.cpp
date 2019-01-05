@@ -34,14 +34,15 @@ int Die::randomInt() {
 }
 
 /*********************************************************************
-** Description:     takes an int parameter to set the sides of N
+** Description:     setter that takes an int parameter to set the
+**                  sides of N
 *********************************************************************/
 void Die::setSides(int sides) {
     N = sides;
 }
 
 /*********************************************************************
-** Description:     A
+** Description:     getter that returns N
 *********************************************************************/
 int Die::getSides() {
     return N;
