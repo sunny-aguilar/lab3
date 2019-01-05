@@ -217,7 +217,6 @@ void Game::setSidesChosenDice(Die &obj1, LoadedDie &obj2)
 
 
 int Game::getRollValue(int &p1RollScore, int &p2RollScore, Die &obj1, LoadedDie &obj2, int player) {
-//    for (int player = 0; player < 2; player++) {
         if (getDiceType(player) == NORMAL) {
             if (player == 0) {
                 return obj1.randomInt();
@@ -234,12 +233,7 @@ int Game::getRollValue(int &p1RollScore, int &p2RollScore, Die &obj1, LoadedDie 
                 return obj2.randomInt();
             }
         }
-//    }
 }
-
-
-
-
 
 /*********************************************************************
 ** Description:     parameter takes an int value to set player one
