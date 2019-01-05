@@ -37,11 +37,10 @@ int LoadedDie::randomInt() {
     // computer random number between 1 and vectorElements
     randomNum = rand() % vectorElements + 1;
 
-
-
     // push a total of vectorElements into vector starting with n = 1
     for (int n = 1; n <= vectorElements; n++ ) {
         for ( int count = 1; count <= n; count++) {
+            // push back n an n number of times
             loadedValues.push_back( n );
         }
     }
