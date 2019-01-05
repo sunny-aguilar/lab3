@@ -10,14 +10,14 @@
 
 class Die {
 public:
-    Die();
-    Die(int num);
-    int randomInt();        // returns a random integer
-    void setSides(int sides);
-    int getSides();
+    Die();                          // default constructor
+    Die(int num);                   // 1-arg constructor
+    int randomInt();                // returns a random integer
+    void setSides(int sides);       // setter that sets die sides
+    int getSides();                 // getter that returns die sides
 
 protected:
-    int N;                  // number of sides on the die
+    int N;                          // number of sides on the die
 };
 
 #endif

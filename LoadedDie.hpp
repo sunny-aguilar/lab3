@@ -10,9 +10,9 @@
 
 class LoadedDie : public Die {
 public:
-    LoadedDie();
-    LoadedDie(int num);
-    int randomInt();
+    LoadedDie();                        // default constructor
+    LoadedDie(int num);                 // 1-arg constructor
+    int randomInt();                    // return loaded random integer
 };
 
 #endif
