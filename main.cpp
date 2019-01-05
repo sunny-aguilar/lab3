@@ -59,7 +59,6 @@ int main() {
                 // players roll dice and store results in game.p1Score or p2Score
                 int p1RollScore = 0, p2RollScore = 0;
 
-
                 // get random integer for each player
                 for (int player = 0; player < 2; player++) {
                     if (game.getDiceType(player) == NORMAL) {
