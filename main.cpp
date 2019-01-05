@@ -86,8 +86,7 @@ int main() {
             }
 
         } while (playAgain);
-
-
+        
         cout << "Game finished\n";
     }
     else if (game.getSelection() == 2) {
