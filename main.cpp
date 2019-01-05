@@ -59,28 +59,29 @@ int main() {
                 // players roll dice and store results in game.p1Score or p2Score
                 int p1RollScore = 0, p2RollScore = 0;
 
-                p1RollScore = game.getRollValue(die, loadedDie);
-                p2RollScore = game.getRollValue(die, loadedDie);
+                // get random integer for each player
+                p1RollScore = game.getRollValue(p1RollScore, p1RollScore, die, loadedDie, 1);
+                p2RollScore = game.getRollValue(p2RollScore, p2RollScore, die, loadedDie, 2);
 
                 // get random integer for each player
-                for (int player = 0; player < 2; player++) {
-                    if (game.getDiceType(player) == NORMAL) {
-                        if (player == 0) {
-                            p1RollScore = die.randomInt();
-                        }
-                        else if (player == 1) {
-                            p2RollScore = die.randomInt();
-                        }
-                    }
-                    else if (game.getDiceType(player) == LOADED) {
-                        if (player == 0) {
-                            p1RollScore = loadedDie.randomInt();
-                        }
-                        else if (player == 1) {
-                            p2RollScore = loadedDie.randomInt();
-                        }
-                    }
-                }
+//                for (int player = 0; player < 2; player++) {
+//                    if (game.getDiceType(player) == NORMAL) {
+//                        if (player == 0) {
+//                            p1RollScore = die.randomInt();
+//                        }
+//                        else if (player == 1) {
+//                            p2RollScore = die.randomInt();
+//                        }
+//                    }
+//                    else if (game.getDiceType(player) == LOADED) {
+//                        if (player == 0) {
+//                            p1RollScore = loadedDie.randomInt();
+//                        }
+//                        else if (player == 1) {
+//                            p2RollScore = loadedDie.randomInt();
+//                        }
+//                    }
+//                }
 
                 // update winner score
                 std::string winner;
