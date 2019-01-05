@@ -48,14 +48,16 @@ int LoadedDie::randomInt() {
     return loadedValues[randomNum];
 }
 
-//int LoadedDie::load(int n) {
-//    std::cout << "Size N " << N << std::endl;
-//    std::cout << "Size n " << n << std::endl;
-//    if (N >= n) {
-//        load(n+1);
-//        std::cout << "recursive n value!\n";
-//    }
+void LoadedDie::load(int n) {
+    vector<int> Narray;
+    std::cout << "Size N " << N << std::endl;
+    std::cout << "Size n " << n << std::endl;
+    if (N >= n) {
+        load(n+1);
+        std::cout << "recursive n value!\n";
+    }
+    for (n = 1; n <= N; n++) {
 
+    }
 
-//    return n;
-//}
+}
