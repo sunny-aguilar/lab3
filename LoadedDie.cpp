@@ -12,8 +12,18 @@ using std::vector;
 LoadedDie::LoadedDie() : Die{0} {};
 LoadedDie::LoadedDie(int num) : Die{num} {}
 
+/*********************************************************************
+** Description:     this function returns an integer from 1 to N where
+**                  the average output of rolling it several times is
+**                  higher that of a Die object with the same number
+**                  of sides.
+*********************************************************************/
 int LoadedDie::randomInt() {
-    // algorithm to taken N int values and change them so that the average
+    // algorithm: create a vector with a total number of elements that is equal to
+    // the sum of the arithmetic sequence of N i.e., elements in vector = (N + 1) / 2
+    // The elements being pushed on to the array is equal to N starting with N = 1.
+    // N elements are pushed on to the array N number of times.
+    // take N int values and change them so that the average
     // output of rolling it out is higher than the die object with the same
     // number of sides
     // Create an array and using the 1-N array and store such that elements up to N
@@ -45,19 +55,7 @@ int LoadedDie::randomInt() {
         }
     }
 
+    // return a random element from a vector that has been "loaded" i.e.
+    // a biased dice
     return loadedValues[randomNum];
-}
-
-void LoadedDie::load(int n, int vectElements) {
-    vector<int> Narray;
-    std::cout << "Size N " << N << std::endl;
-    std::cout << "Size n " << n << std::endl;
-    if (N >= n) {
-        load(n+1);
-        std::cout << "recursive n value!\n";
-    }
-    for (n = 1; n <= N; n++) {
-
-    }
-
 }

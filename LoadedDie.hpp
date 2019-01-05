@@ -14,8 +14,6 @@ public:
     LoadedDie(int num);
     int randomInt();
 
-private:
-    void load(int n, int vectElements);
 };
 
 #endif
