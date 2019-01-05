@@ -37,6 +37,9 @@ void Game::showStartMenu()
          << ">> ";
 }
 
+/*********************************************************************
+** Description:     setter sets the selection made in the main menu
+*********************************************************************/
 void Game::setSelection(int sel)
 {
     selection = sel;
