@@ -15,11 +15,11 @@ enum Dice {UNSET, NORMAL, LOADED};              // enum datatype for dice
 
 class Game {
 public:
-    Game();
-    void showStartMenu();
-    int validateNumber(int min, int max);
-    void setSelection(int sel);
-    int getSelection();
+    Game();                                     // default constructor
+    void showStartMenu();                       // show start menu
+    int validateNumber(int min, int max);       // validate data
+    void setSelection(int sel);                 // setter of selection
+    int getSelection();                         // getter of selection
     void submenuRounds();
     void setRounds(int rounds);
     int getRounds();
