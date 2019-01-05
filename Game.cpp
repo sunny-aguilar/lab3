@@ -175,10 +175,13 @@ void Game::setDiceType(int player, int type)
 *********************************************************************/
 Dice Game::getDiceType(int player)
 {
-    if (player <=2 && player >=0)
+    if (player <=2 && player >=0) {
         return diceType[player];
-    else
+    }
+    else {
         cout << "Dice type array value is out of bounds!\n";
+        return diceType[0];
+    }
 }
 
 /*********************************************************************
@@ -262,6 +265,10 @@ int Game::getRollValue(Die &obj1, LoadedDie &obj2, int player)
             return obj2.randomInt();
         }
     }
+    else {
+        cout << "Error getting roll value!\n";
+        return 0;
+    }
 }
 
 /*********************************************************************
@@ -303,6 +310,7 @@ string Game::updatePlayerScore(int p1Roll, int p2Roll) {
     }
     else {
         cout << "error calculating which player roll is higher!\n";
+        return "error calculating which player roll is higher";
     }
 }
 
