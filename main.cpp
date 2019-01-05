@@ -92,7 +92,6 @@ int main() {
 
             }
             
-
             // ask user if they want to play again
             game.submenuReplay();
             game.setSelection( game.validateNumber(1, 2) );
