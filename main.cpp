@@ -70,7 +70,6 @@ int main() {
                 // end of round
                 cout << "\nHit [Enter] to continue\n";
                 cin.get();
-
             }
 
             // ask user if they want to play again
