@@ -91,7 +91,7 @@ int main() {
                 cin.get();
 
             }
-            
+
             // ask user if they want to play again
             game.submenuReplay();
             game.setSelection( game.validateNumber(1, 2) );
@@ -105,6 +105,7 @@ int main() {
                 game.setplayerOneScore(0);
                 game.setplayerTwoScore(0);
             }
+
         } while (playAgain);
 
 
