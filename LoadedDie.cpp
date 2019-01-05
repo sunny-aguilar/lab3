@@ -10,6 +10,7 @@
 using std::vector;
 
 LoadedDie::LoadedDie() : Die{0} {};
+
 LoadedDie::LoadedDie(int num) : Die{num} {}
 
 /*********************************************************************
