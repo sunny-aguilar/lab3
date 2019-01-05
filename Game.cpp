@@ -20,6 +20,9 @@ using std::string;
 *********************************************************************/
 Game::Game() : selection{0}, rounds{0}, diceType{UNSET, UNSET}, playerOneScore{0}, playerTwoScore{0} {}
 
+/*********************************************************************
+** Description:     shows the start menu
+*********************************************************************/
 void Game::showStartMenu()
 {
     cout << "/******************************************/\n"
