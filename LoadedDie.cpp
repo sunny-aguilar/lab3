@@ -48,7 +48,7 @@ int LoadedDie::randomInt() {
     return loadedValues[randomNum];
 }
 
-void LoadedDie::load(int n) {
+void LoadedDie::load(int n, int vectElements) {
     vector<int> Narray;
     std::cout << "Size N " << N << std::endl;
     std::cout << "Size n " << n << std::endl;

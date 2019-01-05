@@ -15,7 +15,7 @@ public:
     int randomInt();
 
 private:
-    void load(int n);
+    void load(int n, int vectElements);
 };
 
 #endif
