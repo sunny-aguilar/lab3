@@ -16,7 +16,8 @@ using std::vector;
 Die::Die() : N{0} {}
 
 /*********************************************************************
-** Description:     
+** Description:     1-arg constructor that takes an int parameter to
+**                  set the number of sides on the die
 *********************************************************************/
 Die::Die(int num) : N{num} { N = num; }
 
