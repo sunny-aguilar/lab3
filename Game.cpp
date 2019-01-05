@@ -209,7 +209,8 @@ void Game::setSidesChosenDice(Die &obj1, LoadedDie &obj2)
         {
             setSides( obj2, validateNumber(3, 20) );
         }
-        else {
+        else
+        {
             cout << "Error setting the number of sides!\n";
         }
     }
@@ -222,20 +223,26 @@ void Game::setSidesChosenDice(Die &obj1, LoadedDie &obj2)
  *                  parameters by reference and assigns the resulting
  *                  values to p1RollScore /p2RollScore
 *********************************************************************/
-int Game::getRollValue(Die &obj1, LoadedDie &obj2, int player) {
-    if (getDiceType(player) == NORMAL) {
-            if (player == 0) {
+int Game::getRollValue(Die &obj1, LoadedDie &obj2, int player)
+{
+    if (getDiceType(player) == NORMAL)
+    {
+            if (player == 0)
+            {
                 return obj1.randomInt();
             }
-            else if (player == 1) {
+            else if (player == 1)
+            {
                 return obj1.randomInt();
             }
     }
-    else if (getDiceType(player) == LOADED) {
+    else if (getDiceType(player) == LOADED)
+    {
         if (player == 0) {
             return obj2.randomInt();
         }
-        else if (player == 1) {
+        else if (player == 1)
+        {
             return obj2.randomInt();
         }
     }
