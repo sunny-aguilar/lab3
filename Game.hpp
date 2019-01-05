@@ -42,7 +42,7 @@ public:
     void submenuGameOver();
 
 protected:
-    int selection;
+    int selection;                          // hold selection made
     int rounds;
     Dice diceType[2];
     int playerOneScore;
