@@ -217,22 +217,22 @@ void Game::setSidesChosenDice(Die &obj1, LoadedDie &obj2)
 
 
 int Game::getRollValue(int &p1RollScore, int &p2RollScore, Die &obj1, LoadedDie &obj2, int player) {
-        if (getDiceType(player) == NORMAL) {
+    if (getDiceType(player) == NORMAL) {
             if (player == 0) {
                 return obj1.randomInt();
             }
             else if (player == 1) {
                 return obj1.randomInt();
             }
+    }
+    else if (getDiceType(player) == LOADED) {
+        if (player == 0) {
+            return obj2.randomInt();
         }
-        else if (getDiceType(player) == LOADED) {
-            if (player == 0) {
-                return obj2.randomInt();
-            }
-            else if (player == 1) {
-                return obj2.randomInt();
-            }
+        else if (player == 1) {
+            return obj2.randomInt();
         }
+    }
 }
 
 /*********************************************************************
