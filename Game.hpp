@@ -49,7 +49,7 @@ protected:
     int playerTwoScore;
 
 private:
-    void submenuSides(int player);
+    void submenuSides(int player);          // internal use function
 };
 
 #endif
