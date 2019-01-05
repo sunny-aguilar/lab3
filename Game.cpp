@@ -12,6 +12,7 @@
 using std::cin;
 using std::cout;
 using std::endl;
+using std::string;
 
 Game::Game() : selection{0}, rounds{0}, diceType{UNSET, UNSET}, playerOneScore{0}, playerTwoScore{0} {}
 
@@ -231,6 +232,30 @@ void Game::setplayerOneScore(int score)
 void Game::setplayerTwoScore(int score)
 {
     playerTwoScore = score;
+}
+
+/*********************************************************************
+** Description:     determine the winner and updates the player
+**                  scores by adding 1 to the winner's score. The
+**                  parameters received are used to compare the roll
+**                  value each player rolled and use to determine the
+**                  winner
+*********************************************************************/
+string Game::updatePlayerScore(int p1Roll, int p2Roll) {
+    if (p1Roll == p2Roll) {
+        return "No player wins the round\n";
+    }
+    else if (p1Roll > p2Roll) {
+        addplayerOneScore();
+        return "Player one wins the round!\n";
+    }
+    else if (p1Roll < p2Roll) {
+        addplayerTwoScore();
+        return "Player two wins the round!\n";
+    }
+    else {
+        cout << "error calculating which player roll is higher!\n";
+    }
 }
 
 /*********************************************************************

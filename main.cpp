@@ -81,20 +81,22 @@ int main() {
                 }
 
                 // update winner score
-                if (p1RollScore == p2RollScore) {
-                    winner = "No player wins the round\n";
-                }
-                else if (p1RollScore > p2RollScore) {
-                    winner = "Player one wins the round!\n";
-                    game.addplayerOneScore();
-                }
-                else if (p1RollScore < p2RollScore) {
-                    winner = "Player two wins the round!\n";
-                    game.addplayerTwoScore();
-                }
-                else {
-                    cout << "error calculating which player roll is higher!\n";
-                }
+                winner = game.updatePlayerScore(p1RollScore, p2RollScore);
+
+//                if (p1RollScore == p2RollScore) {
+//                    winner = "No player wins the round\n";
+//                }
+//                else if (p1RollScore > p2RollScore) {
+//                    winner = "Player one wins the round!\n";
+//                    game.addplayerOneScore();
+//                }
+//                else if (p1RollScore < p2RollScore) {
+//                    winner = "Player two wins the round!\n";
+//                    game.addplayerTwoScore();
+//                }
+//                else {
+//                    cout << "error calculating which player roll is higher!\n";
+//                }
 
                 // display game results after each round
                 game.submenueReport(winner, p1RollScore, p2RollScore, round+1);

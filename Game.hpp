@@ -9,6 +9,7 @@
 #include "Die.hpp"
 #include "LoadedDie.hpp"
 #include <string>
+using std::string;
 
 enum Dice {UNSET, NORMAL, LOADED};
 
@@ -31,6 +32,7 @@ public:
     void setSidesChosenDice(Die &obj1, LoadedDie &obj2);
     void setplayerOneScore(int score);
     void setplayerTwoScore(int score);
+    string updatePlayerScore(int p1Roll, int p2Roll);
     void addplayerOneScore();
     void addplayerTwoScore();
     int getplayerOneScore();
