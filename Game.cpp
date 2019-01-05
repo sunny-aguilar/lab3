@@ -148,7 +148,7 @@ Dice Game::getDiceType(int player) {
 *********************************************************************/
 void Game::submenuSides(int player) {
     cout << "Enter the number of sides on the dice\n"
-         << "for player " << player << endl;
+         << "for player #" << player << endl;
 }
 
 /*********************************************************************

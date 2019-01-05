@@ -51,8 +51,9 @@ int main() {
             for (int round = 0; round < game.getRounds(); round++) {
 
                 // roll player 1 and player 2 dice via for loop
-                // player 1 rolls dice and store results in game in
+                // players roll dice and store results in game.p1Score or p2Score
                 for (int player = 0; player < 2; player++) {
+                    cout << "Player #" << player+1;
                     if (game.getDiceType(player) == NORMAL) {
                         if (player == 0) {
                             game.addplayerOneScore( die.randomInt() );
