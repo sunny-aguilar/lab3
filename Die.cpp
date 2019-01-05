@@ -19,7 +19,6 @@ int Die::randomInt() {       // returns a random integer
     seed = static_cast<unsigned int>(time(nullptr));
     srand(seed);
     randomNum = rand() % N + 1;
-    std::cout << "random integer being returned by Die is " << randomNum << std::endl;
     return randomNum;
 }
 

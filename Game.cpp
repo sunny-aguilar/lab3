@@ -6,6 +6,7 @@
 *********************************************************************/
 #include "Game.hpp"
 #include <iostream>
+#include <string>
 #include <cstring>
 #include <sstream>
 using std::cin;
@@ -14,20 +15,24 @@ using std::endl;
 
 Game::Game() : selection{0}, rounds{0}, diceType{UNSET, UNSET}, playerOneScore{0}, playerTwoScore{0} {}
 
-void Game::showStartMenu() {
-    cout << "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n"
-         << "Enter 1 to play - Enter 2 to exit\n"
-         << "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n"
+void Game::showStartMenu()
+{
+    cout << "/******************************************/\n"
+         << "/              WAR DICE GAME               /\n"
+         << "/    Enter 1 to play - Enter 2 to exit     /\n"
+         << "/******************************************/\n"
          << "1. Play Game\n"
          << "2. Exit Game\n"
          << ">> ";
 }
 
-void Game::setSelection(int sel) {
+void Game::setSelection(int sel)
+{
     selection = sel;
 }
 
-int Game::getSelection() {
+int Game::getSelection()
+{
     return selection;
 }
 
@@ -35,7 +40,8 @@ int Game::getSelection() {
 ** Description:     general validator where the parameters are the
 **                  min and max numbers acceptable
 *********************************************************************/
-int Game::validateNumber(int min, int max) {
+int Game::validateNumber(int min, int max)
+{
     char choice[100];
     int amount = 0;
     std::stringstream convert;
@@ -47,22 +53,24 @@ int Game::validateNumber(int min, int max) {
     long unsigned length = std::to_string(max).length();
 
     do {
-//        cout << "Enter an integer between " <<  min << " and " << max << endl;
         cin.getline(choice, 100);
 
         // check if length is greater than 3
         tooLong = false;
-        if (strlen(choice) > length) {
+        if (strlen(choice) > length)
+        {
             tooLong = true;
             cout << "enter only one number!\n";
         }
 
         // check if all characters entered are digits
         isNotDigit = false;
-        for (int i = 0; i < strlen(choice); i++) {
+        for (int i = 0; i < strlen(choice); i++)
+        {
             // if digit is not a digit, then set it true so that
             // loop will repeat
-            if (!isdigit(choice[i])) {
+            if (!isdigit(choice[i]))
+            {
                 isNotDigit = true;
             }
         }
@@ -71,12 +79,14 @@ int Game::validateNumber(int min, int max) {
 
         // check if characters entered are within range
         notInRange = false;
-        if (isNotDigit == false && tooLong == false) {
+        if (!isNotDigit && !tooLong)
+        {
             convert.clear();
             convert << choice;
             convert >> amount;
 
-            if (amount < min || amount > max) {
+            if (amount < min || amount > max)
+            {
                 notInRange = true;
                 cout << "enter a number between "
                      << min << " or " << max << endl;
@@ -90,32 +100,38 @@ int Game::validateNumber(int min, int max) {
 /*********************************************************************
 ** Description:     asks user to enter the rounds to play
 *********************************************************************/
-void Game::submenuRounds() {
+void Game::submenuRounds()
+{
     cout << "How many rounds do you want to play?\n"
-         << "Pick between 1 and 1000 rounds\n";
+         << "Pick between 1 and 1000 rounds\n"
+         << ">> ";
 }
 
 /*********************************************************************
 ** Description:     takes an int parameter to set the rounds
 *********************************************************************/
-void Game::setRounds(int rounds) {
+void Game::setRounds(int rounds)
+{
     this->rounds = rounds;
 }
 
 /*********************************************************************
 ** Description:     returns the rounds to play
 *********************************************************************/
-int Game::getRounds() {
+int Game::getRounds()
+{
     return rounds;
 }
 
 /*********************************************************************
 ** Description:     asks user to enter dice type for each player
 *********************************************************************/
-void Game::submenuDiceType(int player) {
-    cout << "Enter the type of die to use for player #" << player
+void Game::submenuDiceType(int player)
+{
+    cout << "\nEnter the type of die to use for player #" << player
          << "\n1. Normal Dice\n"
-         << "2. Loaded Dice\n";
+         << "2. Loaded Dice\n"
+         << ">> ";
 
 }
 
@@ -123,7 +139,8 @@ void Game::submenuDiceType(int player) {
 ** Description:     takes a bool parameter to indicate if dice is
 **                  loaded
 *********************************************************************/
-void Game::setDiceType(int player, int type) {
+void Game::setDiceType(int player, int type)
+{
     switch (type) {
         case 1:
             diceType[player] = NORMAL;
@@ -139,30 +156,38 @@ void Game::setDiceType(int player, int type) {
 /*********************************************************************
 ** Description:     returns player dice type
 *********************************************************************/
-Dice Game::getDiceType(int player) {
-    return diceType[player];
+Dice Game::getDiceType(int player)
+{
+    if (player <=2 && player >=0)
+        return diceType[player];
+    else
+        cout << "Dice type array value is out of bounds!\n";
 }
 
 /*********************************************************************
 ** Description:     asks user for N sides of dice
 *********************************************************************/
-void Game::submenuSides(int player) {
-    cout << "Enter the number of sides on the dice\n"
-         << "for player #" << player << endl;
+void Game::submenuSides(int player)
+{
+    cout << "\nEnter the number of sides on the dice\n"
+         << "for player #" << player
+         << "\n>> ";
 }
 
 /*********************************************************************
 ** Description:     param takes a dice object to set its sides
 **                  called internally, MAKE PRIVATE
 *********************************************************************/
-void Game::setSides(Die &obj, int sides) {
+void Game::setSides(Die &obj, int sides)
+{
     obj.setSides(sides);
 }
 
 /*********************************************************************
 ** Description:     param takes a loaded dice object to set its sides
 *********************************************************************/
-void Game::setSides(LoadedDie &obj, int sides) {
+void Game::setSides(LoadedDie &obj, int sides)
+{
     obj.setSides(sides);
 }
 
@@ -171,16 +196,18 @@ void Game::setSides(LoadedDie &obj, int sides) {
 **                  type of die class to set the number of sides as
 **                  appropriate
 *********************************************************************/
-void Game::setSidesChosenDice(Die &obj1, LoadedDie &obj2) {
-    for (int player = 0; player < 2; player++) {
+void Game::setSidesChosenDice(Die &obj1, LoadedDie &obj2)
+{
+    for (int player = 0; player < 2; player++)
+    {
         submenuSides(player+1);     // internal private member function call
-        if (getDiceType(player) == NORMAL) {
+        if (getDiceType(player) == NORMAL)
+        {
             setSides( obj1, validateNumber(3, 20) );
-//            cout << "Sides stored in Die object " << obj1.getSides() << endl;
         }
-        else if (getDiceType(player) == LOADED) {
+        else if (getDiceType(player) == LOADED)
+        {
             setSides( obj2, validateNumber(3, 20) );
-//            cout << "Sides stored in loadedDie object " << obj2.getSides() << endl;
         }
         else {
             cout << "Error setting the number of sides!\n";
@@ -192,7 +219,8 @@ void Game::setSidesChosenDice(Die &obj1, LoadedDie &obj2) {
 ** Description:     parameter takes an int value to set player one
 **                  score
 *********************************************************************/
-void Game::setplayerOneScore(int score) {
+void Game::setplayerOneScore(int score)
+{
     playerOneScore = score;
 }
 
@@ -200,7 +228,8 @@ void Game::setplayerOneScore(int score) {
 ** Description:     parameter takes an int value to set player two
 **                  score
 *********************************************************************/
-void Game::setplayerTwoScore(int score) {
+void Game::setplayerTwoScore(int score)
+{
     playerTwoScore = score;
 }
 
@@ -208,7 +237,8 @@ void Game::setplayerTwoScore(int score) {
 ** Description:     parameter takes an int value to add to player one
 **                  score
 *********************************************************************/
-void Game::addplayerOneScore() {
+void Game::addplayerOneScore()
+{
     playerOneScore += 1;
 }
 
@@ -216,28 +246,79 @@ void Game::addplayerOneScore() {
 ** Description:     parameter takes an int value to add to player two
 **                  score
 *********************************************************************/
-void Game::addplayerTwoScore() {
+void Game::addplayerTwoScore()
+{
     playerTwoScore += 1;
 }
 
 /*********************************************************************
 ** Description:    gets the score of player one
 *********************************************************************/
-int Game::getplayerOneScore() {
+int Game::getplayerOneScore()
+{
     return playerOneScore;
 }
 
 /*********************************************************************
 ** Description:    gets the score of player two
 *********************************************************************/
-int Game::getplayerTwoScore() {
+int Game::getplayerTwoScore()
+{
     return playerTwoScore;
 }
 
 /*********************************************************************
+** Description:    displays detailed results of each round
+*********************************************************************/
+void Game::submenueReport(std::string winner, int p1Roll, int p2Roll, int round)
+{
+    cout << "/******************************************/\n"
+         << "      Round #" << round << "- Winner & Score Report\n"
+         << "/******************************************/\n"
+         << ">> "<< winner
+         << "Player one rolled a " << p1Roll << endl
+         << "Player two rolled a " << p2Roll << endl << endl
+         << ">> Player Scores\n"
+         << "Player One - " << getplayerOneScore() << endl
+         << "Player Two - " << getplayerTwoScore() << endl << endl;
+
+    // switch statement to get value of enum variable
+    cout << ">> Type of dice\n";
+
+    for (int player = 0; player < 2; player++)
+    {
+        switch ( getDiceType(player) )
+        {
+            case 1:
+                cout << "Player One is using a normal dice\n";
+                break;
+            case 2:
+                cout << "Player Two is using a loaded dice\n";
+                break;
+            default:
+                cout << "Error showing dice being used!\n";
+        }
+    }
+
+    if ( round == getRounds() ) {
+        cout << "\n\n>> All rounds are over - and the winner is...\n";
+        if ( getplayerOneScore() > getplayerTwoScore() )
+            cout << ">> PLAYER ONE!\n";
+        else if ( getplayerOneScore() < getplayerTwoScore() )
+            cout << ">> PLAYER TWO!\n";
+        else
+            cout << "GAME IS A TIE!\n";
+    }
+}
+
+
+
+
+/*********************************************************************
 ** Description:     asks user if they want to play again
 *********************************************************************/
-void Game::submenuReplay() {
+void Game::submenuReplay()
+{
     cout << "1. Play again\n"
          << "2. End game\n";
 }
@@ -245,7 +326,8 @@ void Game::submenuReplay() {
 /*********************************************************************
 ** Description:     thanks user for playing the game
 *********************************************************************/
-void Game::submenuGameOver() {
+void Game::submenuGameOver()
+{
     cout << "---------  ---------  ---------\n"
          << "| o     |  | o   o |  | o   o |\n"
          << "|   o   |  |       |  |   o   |\n"

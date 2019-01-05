@@ -8,6 +8,7 @@
 #define GAME_HPP
 #include "Die.hpp"
 #include "LoadedDie.hpp"
+#include <string>
 
 enum Dice {UNSET, NORMAL, LOADED};
 
@@ -18,7 +19,6 @@ public:
     int validateNumber(int min, int max);
     void setSelection(int sel);
     int getSelection();
-    void submenuReplay();
     void submenuRounds();
     void setRounds(int rounds);
     int getRounds();
@@ -35,7 +35,8 @@ public:
     void addplayerTwoScore();
     int getplayerOneScore();
     int getplayerTwoScore();
-
+    void submenueReport(std::string winner, int p1Roll, int p2Roll, int round);
+    void submenuReplay();
     void submenuGameOver();
 
 protected:

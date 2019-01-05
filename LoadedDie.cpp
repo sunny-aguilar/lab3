@@ -43,26 +43,13 @@ int LoadedDie::randomInt() {
     randomNum = rand() % vectorElements;
 
     // push a total of vectorElements into vector starting with n = 1
-    std::cout << "Value being stored in n\n";
     for (int n = 1; n <= N; n++ ) {
         for ( int count = 1; count <= n; count++) {
-            std::cout << n;
             loadedValues.push_back( n );
         }
         std::cout << std::endl;
     }
 
-    std::cout << "\nValue of vectorElements is " << vectorElements << std::endl;
-    std::cout << "Value of N is " << N << std::endl;
-    std::cout << "Values in loaded vector\n";
-    for (int val: loadedValues) {
-        std::cout << val << " ";
-    }
-
-    std::cout << std::endl;
-
-    // return a random element from a vector that has been "loaded" i.e.
-    // a biased dice
-    std::cout << "random integer being returned by loadedDie is " <<  loadedValues[randomNum] << std::endl;
+    // return a random integer from vector
     return loadedValues[randomNum];
 }

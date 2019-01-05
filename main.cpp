@@ -13,6 +13,7 @@
 #include "LoadedDie.hpp"
 #include "Game.hpp"
 #include <iostream>
+#include <string>
 using std::cin;
 using std::cout;
 using std::endl;
@@ -32,8 +33,7 @@ int main() {
     // begin the game
     if (game.getSelection() == 1) {
         // user plays the game
-        cout << "starting game\n";
-
+        cout << "\nStarting Game\n\n";
 
         bool playAgain;
         do {
@@ -58,7 +58,9 @@ int main() {
                 // roll player 1 and player 2 dice via for loop
                 // players roll dice and store results in game.p1Score or p2Score
                 int p1RollScore = 0, p2RollScore = 0;
+                std::string winner;
 
+                // get random integer for each player
                 for (int player = 0; player < 2; player++) {
                     if (game.getDiceType(player) == NORMAL) {
                         if (player == 0) {
@@ -76,66 +78,33 @@ int main() {
                             p2RollScore = loadedDie.randomInt();
                         }
                     }
-
-//                    cout << "Player one score is " << game.getplayerOneScore() << endl;
-//                    cout << "Player two score is " << game.getplayerTwoScore() << endl;
-//
-//                    cout << "Hit [Enter] to continue\n";
-//                    cin.get();
                 }
 
-
+                // update winner score
                 if (p1RollScore == p2RollScore) {
-                    cout << "No player wins\n";
-                    cout << "Player one roll is " << p1RollScore << endl;
-                    cout << "Player two roll is " << p2RollScore << endl;
-                    cout << "Player One Score is " << game.getplayerOneScore() << endl;
-                    cout << "Player Two Score is " << game.getplayerTwoScore() << endl;
-                    cout << "Player One dice being used is " << game.getDiceType(0) << endl;
-                    cout << "Player Two dice being used is " << game.getDiceType(1) << endl;
+                    winner = "No player wins the round\n";
                 }
                 else if (p1RollScore > p2RollScore) {
-                    cout << "Player One Wins!\n";
-                    cout << "Player one roll is " << p1RollScore << endl;
-                    cout << "Player two roll is " << p2RollScore << endl;
-                    cout << "Player One Score is " << game.getplayerOneScore() << endl;
-                    cout << "Player Two Score is " << game.getplayerTwoScore() << endl;
-                    cout << "Player One dice being used is " << game.getDiceType(0) << endl;
-                    cout << "Player Two dice being used is " << game.getDiceType(1) << endl;
+                    winner = "Player one wins the round!\n";
                     game.addplayerOneScore();
                 }
                 else if (p1RollScore < p2RollScore) {
-                    cout << "Player Two wins!\n";
-                    cout << "Player one roll is " << p1RollScore << endl;
-                    cout << "Player two roll is " << p2RollScore << endl;
-                    cout << "Player One Score is " << game.getplayerOneScore() << endl;
-                    cout << "Player Two Score is " << game.getplayerTwoScore() << endl;
-                    cout << "Player One dice being used is " << game.getDiceType(0) << endl;
-                    cout << "Player Two dice being used is " << game.getDiceType(1) << endl;
+                    winner = "Player two wins the round!\n";
                     game.addplayerTwoScore();
                 }
                 else {
                     cout << "error calculating which player roll is higher!\n";
                 }
 
+                // display game results after each round
+                game.submenueReport(winner, p1RollScore, p2RollScore, round+1);
 
-
-                // output results
-                // type of die and # of sides
-//                cout << "Player One dice being used is " << game.getDiceType(0) << endl;
-//                cout << "Player Two dice being used is " << game.getDiceType(1) << endl;
-                // score result
-                // number each player rolls
-//                cout << "Player One Score is " << game.getplayerOneScore() << endl;
-//                cout << "Player Two Score is " << game.getplayerTwoScore() << endl;
-
-                cout << "End of Round #" << round+1 << endl;
-                cout << "Hit [Enter] to continue\n";
+                // end of round
+                cout << "\nHit [Enter] to continue\n";
                 cin.get();
 
             }
-            // afterwards, display the final score count
-            // display final winner
+
 
 
             // ask user if they want to play again
@@ -150,8 +119,6 @@ int main() {
                 playAgain = true;
                 game.setplayerOneScore(0);
                 game.setplayerTwoScore(0);
-                cout << "P1 score after reset " << game.getplayerOneScore() << endl;
-                cout << "P2 score after reset " << game.getplayerTwoScore() << endl;
             }
         } while (playAgain);
 
