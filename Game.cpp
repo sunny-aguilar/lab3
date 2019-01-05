@@ -231,7 +231,7 @@ int Game::getRollValue(Die &obj1, LoadedDie &obj2) {
                 return obj2.randomInt();
             }
             else if (player == 1) {
-                p2RollScore = obj2.randomInt();
+                return obj2.randomInt();
             }
         }
     }
