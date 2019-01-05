@@ -18,7 +18,10 @@ using std::string;
 ** Description:     no-args default constructor that sets the member
 **                  variables
 *********************************************************************/
-Game::Game() : selection{0}, rounds{0}, diceType{UNSET, UNSET}, playerOneScore{0}, playerTwoScore{0} {}
+Game::Game()
+    : selection{0}, rounds{0}, diceType{UNSET, UNSET},
+    playerOneScore{0}, playerTwoScore{0} {
+}
 
 /*********************************************************************
 ** Description:     shows the start menu
