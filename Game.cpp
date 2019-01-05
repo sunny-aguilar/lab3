@@ -284,7 +284,6 @@ void Game::submenueReport(std::string winner, int p1Roll, int p2Roll, int round)
 
     // switch statement to get value of enum variable
     cout << ">> Type of dice\n";
-
     for (int player = 0; player < 2; player++)
     {
         switch ( getDiceType(player) )
@@ -300,6 +299,7 @@ void Game::submenueReport(std::string winner, int p1Roll, int p2Roll, int round)
         }
     }
 
+    // display this report once all rounds are over to announce winner
     if ( round == getRounds() ) {
         cout << "\n\n>> All rounds are over - and the winner is...\n";
         if ( getplayerOneScore() > getplayerTwoScore() )
@@ -310,9 +310,6 @@ void Game::submenueReport(std::string winner, int p1Roll, int p2Roll, int round)
             cout << "GAME IS A TIE!\n";
     }
 }
-
-
-
 
 /*********************************************************************
 ** Description:     asks user if they want to play again
