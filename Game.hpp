@@ -44,7 +44,7 @@ public:
 protected:
     int selection;                          // hold selection made
     int rounds;                             // hold rounds to play
-    Dice diceType[2];
+    Dice diceType[2];                       // hold enum for dice type
     int playerOneScore;
     int playerTwoScore;
 
