@@ -31,6 +31,9 @@ int Die::randomInt() {       // returns a random integer
     return randomNum;
 }
 
+/*********************************************************************
+** Description:     A
+*********************************************************************/
 void Die::setSides(int sides) {
     N = sides;
 }
