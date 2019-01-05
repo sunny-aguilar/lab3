@@ -92,7 +92,6 @@ int main() {
     }
     else if (game.getSelection() == 2) {
         // user quit the program in the main menu
-//        cout << "Goodbye\n";
         game.submenuGameOver();
     }
     else {
