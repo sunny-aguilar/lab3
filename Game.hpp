@@ -11,7 +11,7 @@
 #include <string>
 using std::string;
 
-enum Dice {UNSET, NORMAL, LOADED};
+enum Dice {UNSET, NORMAL, LOADED};              // enum datatype for dice
 
 class Game {
 public:
