@@ -46,20 +46,36 @@ int LoadedDie::randomInt() {
 //
 //    }
 
-    vector<int> diceValues;
+    vector<int> diceValues, loadedValues;
 
     // store N int values from 1 to N into a vector
     for (int i = 1; i <= N; i++) {
         diceValues.push_back(i);
     }
 
+    // algorithm to taken N int values and change them so that the average
+    // output of rolling it out is higher than the die object with the same
+    // number of sides
+    for (int n = 1; n <= N; n++) {
+        loadedValues.push_back( load(n) );
+    }
 
     // display N int values in vector
-    for (int i = 0; i < N; i++) {
-        std::cout << diceValues[i] << " ";
+    for (int n = 0; n < N; n++) {
+        std::cout << diceValues[n] << " ";
     }
     std::cout << std::endl;
 
 
     return randomNum;
+}
+
+int LoadedDie::load(int n) {
+    if (n == 1) {
+        return 1;
+    }
+    else if (n <= N) {
+        n++;
+        load(n);
+    }
 }
