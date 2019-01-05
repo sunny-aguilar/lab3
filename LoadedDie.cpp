@@ -9,7 +9,11 @@
 #include <vector>
 using std::vector;
 
-LoadedDie::LoadedDie() : Die{0} {};
+/*********************************************************************
+** Description:     no-args default constructor that also calls the
+**                  base class no-args constructor
+*********************************************************************/
+LoadedDie::LoadedDie() : Die{} {};
 
 LoadedDie::LoadedDie(int num) : Die{num} {}
 
