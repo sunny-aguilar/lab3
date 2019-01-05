@@ -226,9 +226,9 @@ int Game::getRollValue(Die &obj1, LoadedDie &obj2) {
                 return obj1.randomInt();
             }
         }
-        else if (.getDiceType(player) == LOADED) {
+        else if (getDiceType(player) == LOADED) {
             if (player == 0) {
-                p1RollScore = obj2.randomInt();
+                return obj2.randomInt();
             }
             else if (player == 1) {
                 p2RollScore = obj2.randomInt();
