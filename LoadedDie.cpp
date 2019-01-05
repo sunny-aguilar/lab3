@@ -73,7 +73,7 @@ int LoadedDie::randomInt() {
 
 int LoadedDie::load(int n) {
     if (N >= n) {
-        load(n++);
+        load(n+1);
     }
     return n;
 }
