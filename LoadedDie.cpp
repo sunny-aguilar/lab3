@@ -13,6 +13,19 @@ LoadedDie::LoadedDie() : Die{0} {};
 LoadedDie::LoadedDie(int num) : Die{num} {}
 
 int LoadedDie::randomInt() {
+    // algorithm to taken N int values and change them so that the average
+    // output of rolling it out is higher than the die object with the same
+    // number of sides
+    // Create an array and using the 1-N array and store such that elements up to N
+    // are increased as shown in the diagram
+    // 1,
+    // 22,
+    // 333,
+    // 4444,
+    // 5555,
+    // 666666
+
+    vector<int> loadedValues;
     unsigned seed;
     int randomNum;
     seed = static_cast<unsigned int>(time(nullptr));
@@ -21,23 +34,8 @@ int LoadedDie::randomInt() {
     // sum of arithmetic sequence is total elements in vector
     int vectorElements = ((N + 1) * N) / 2;
 
+    // computer random number between 1 and vectorElements
     randomNum = rand() % vectorElements + 1;
-
-//    int rollNum = Die::randomInt();   // call to over-ridden function in base class
-
-//    Create an array and using the 1-N array and store such that elements up to N
-//    are increased as shown in the diagram
-//    1,
-//    22,
-//    333,
-//    4444,
-//    5555,
-//    666666
-
-    vector<int> loadedValues;
-    // algorithm to taken N int values and change them so that the average
-    // output of rolling it out is higher than the die object with the same
-    // number of sides
 
 
 
@@ -47,15 +45,6 @@ int LoadedDie::randomInt() {
             loadedValues.push_back( n );
         }
     }
-
-//
-//    // display N int values in vector
-    std::cout << "\nDisplaying loaded vector values:  ";
-    for (int n = 0; n < vectorElements; n++) {
-        std::cout << loadedValues[n] << " ";
-    }
-
-    std::cout << " loaded score rolled is " << loadedValues[randomNum] << std::endl;
 
     return loadedValues[randomNum];
 }
