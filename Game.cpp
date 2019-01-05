@@ -6,6 +6,7 @@
 *********************************************************************/
 #include "Game.hpp"
 #include <iostream>
+#include <cstring>
 #include <sstream>
 using std::cin;
 using std::cout;
@@ -145,13 +146,14 @@ Dice Game::getDiceType(int player) {
 /*********************************************************************
 ** Description:     asks user for N sides of dice
 *********************************************************************/
-void Game::submenuSides() {
+void Game::submenuSides(int player) {
     cout << "Enter the number of sides on the dice\n"
-         << ">> ";
+         << "for player " << player << endl;
 }
 
 /*********************************************************************
 ** Description:     param takes a dice object to set its sides
+**                  called internally, MAKE PRIVATE
 *********************************************************************/
 void Game::setSides(Die &obj, int sides) {
     obj.setSides(sides);
@@ -171,7 +173,7 @@ void Game::setSides(LoadedDie &obj, int sides) {
 *********************************************************************/
 void Game::setSidesChosenDice(Die &obj1, LoadedDie &obj2) {
     for (int player = 0; player < 2; player++) {
-        submenuSides();
+        submenuSides(player+1);     // internal private member function call
         if (getDiceType(player) == NORMAL) {
             setSides( obj1, validateNumber(3, 20) );
             cout << "Sides stored in Die object " << obj1.getSides() << endl;

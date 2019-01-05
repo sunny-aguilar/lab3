@@ -25,7 +25,7 @@ public:
     void submenuDiceType(int player);
     void setDiceType(int player, int type);
     Dice getDiceType(int player);
-    void submenuSides();
+    void submenuSides(int player);
     void setSides(Die &obj, int sides);
     void setSides(LoadedDie &obj, int sides);
     void setSidesChosenDice(Die &obj1, LoadedDie &obj2);
