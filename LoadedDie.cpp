@@ -30,6 +30,8 @@ int LoadedDie::randomInt() {
 //    5555,
 //    666666
 
+
+
 //      I dont think i'll use this code below
 //    if (rollValue >= 0 && rollValue <=25) {
 //
@@ -46,9 +48,13 @@ int LoadedDie::randomInt() {
 
     vector<int> diceValues;
 
+    // store N int values from 1 to N into a vector
     for (int i = 1; i <= N; i++) {
         diceValues.push_back(i);
     }
+
+
+    // display N int values in vector
     for (int i = 0; i < N; i++) {
         std::cout << diceValues[i] << " ";
     }
