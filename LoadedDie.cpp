@@ -18,8 +18,8 @@ int LoadedDie::randomInt() {
     seed = static_cast<unsigned int>(time(nullptr));
     srand(seed);
     randomNum = rand() % N + 1;
-    std::cout << " score rolled is " << randomNum << std::endl;
-    int rollNum = Die::randomInt();   // call to over-ridden function in base class
+
+//    int rollNum = Die::randomInt();   // call to over-ridden function in base class
 
 //    Create an array and using the 1-N array and store such that elements up to N
 //    are increased as shown in the diagram
@@ -30,51 +30,32 @@ int LoadedDie::randomInt() {
 //    5555,
 //    666666
 
-
-
-//      I dont think i'll use this code below
-//    if (rollValue >= 0 && rollValue <=25) {
-//
-//    }
-//    else if (rollValue > 25 && rollValue <= 50) {
-//
-//    }
-//    else if (rollValue > 50 && rollValue <= 75) {
-//
-//    }
-//    else if (rollValue > 75) {
-//
-//    }
-
-    vector<int> diceValues, loadedValues;
-
-    // store N int values from 1 to N into a vector
-    for (int i = 1; i <= N; i++) {
-        diceValues.push_back(i);
-    }
-
+    vector<int> loadedValues;
     // algorithm to taken N int values and change them so that the average
     // output of rolling it out is higher than the die object with the same
     // number of sides
-    int val = ((N + 1) * N) / 2;
-    std::cout << "Arithmetic Val " << val << std::endl;
 
-    for (int n = 1; n <= val; n++ ) {
-        for ( int x = 1; x <= n; x++) {
+    // sum of arithmetic sequence is total elements in vector
+    int vectorElements = ((N + 1) * N) / 2;
+
+    // push a total of vectorElements into vector starting with n = 1
+    for (int n = 1; n <= vectorElements; n++ ) {
+        for ( int count = 1; count <= n; count++) {
             loadedValues.push_back( n );
         }
     }
 
+//
+//    // display N int values in vector
+//    std::cout << "Displaying loaded vector values:  ";
+//    for (int n = 0; n < val; n++) {
+//        std::cout << loadedValues[n] << " ";
+//    }
+//    std::cout << std::endl;
+    int rollNum = Die::randomInt();
+    std::cout << " score rolled is " << randomNum << std::endl;
 
-    // display N int values in vector
-    std::cout << "Displaying loaded vector values:  ";
-    for (int n = 0; n < val; n++) {
-        std::cout << loadedValues[n] << " ";
-    }
-    std::cout << std::endl;
-
-
-    return randomNum;
+    return loadedValues[rollNum];
 }
 
 //int LoadedDie::load(int n) {
