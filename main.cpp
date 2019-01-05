@@ -49,7 +49,6 @@ int main() {
             }
 
             // ask user for number of sides for dice of both players
-//            game.submenuSides();
             game.setSidesChosenDice(die, loadedDie);
 
             // loop through the rounds to play
