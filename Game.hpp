@@ -46,7 +46,7 @@ protected:
     int rounds;                             // hold rounds to play
     Dice diceType[2];                       // hold enum for dice type
     int playerOneScore;                     // hold player 1 score
-    int playerTwoScore;
+    int playerTwoScore;                     // hold player2 score
 
 private:
     void submenuSides(int player);          // internal use function
