@@ -31,8 +31,8 @@ public:
     void setSidesChosenDice(Die &obj1, LoadedDie &obj2);
     void setplayerOneScore(int score);
     void setplayerTwoScore(int score);
-    void addplayerOneScore(int score);
-    void addplayerTwoScore(int score);
+    void addplayerOneScore();
+    void addplayerTwoScore();
     int getplayerOneScore();
     int getplayerTwoScore();
 

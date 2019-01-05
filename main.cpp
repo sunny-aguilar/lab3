@@ -1,9 +1,14 @@
 /*********************************************************************
 ** Author:          Sandro Aguilar
 ** Date:            Jan 2019
-** Description:     asdf
-**                  asdf
-*********************************************************************/
+** Description:     This is a 2-player game that is placed through
+**                  dice. The player who rolls a higher number gets
+**                  one point. If both players roll the same number, it
+**                  is considered a draw and no one gets a point.
+ *                  Implemented using a Game class, a Die class, and
+ *                  a loadedDie class. Die class is the superclass and
+ *                  the loadedDie class is the sub class.
+ *********************************************************************/
 #include "Die.hpp"
 #include "LoadedDie.hpp"
 #include "Game.hpp"
@@ -52,38 +57,79 @@ int main() {
 
                 // roll player 1 and player 2 dice via for loop
                 // players roll dice and store results in game.p1Score or p2Score
+                int p1RollScore = 0, p2RollScore = 0;
+
                 for (int player = 0; player < 2; player++) {
-                    cout << "Player #" << player+1;
                     if (game.getDiceType(player) == NORMAL) {
                         if (player == 0) {
-                            game.addplayerOneScore( die.randomInt() );
+                            p1RollScore = die.randomInt();
                         }
                         else if (player == 1) {
-                            game.addplayerTwoScore( die.randomInt() );
+                            p2RollScore = die.randomInt();
                         }
                     }
                     else if (game.getDiceType(player) == LOADED) {
                         if (player == 0) {
-                            game.addplayerOneScore( loadedDie.randomInt() );
+                            p1RollScore = loadedDie.randomInt();
                         }
                         else if (player == 1) {
-                            game.addplayerTwoScore( loadedDie.randomInt() );
+                            p2RollScore = loadedDie.randomInt();
                         }
                     }
-                    cout << "Hit [Enter] to continue\n";
-                    cin.get();
+
+//                    cout << "Player one score is " << game.getplayerOneScore() << endl;
+//                    cout << "Player two score is " << game.getplayerTwoScore() << endl;
+//
+//                    cout << "Hit [Enter] to continue\n";
+//                    cin.get();
                 }
+
+
+                if (p1RollScore == p2RollScore) {
+                    cout << "No player wins\n";
+                    cout << "Player one roll is " << p1RollScore << endl;
+                    cout << "Player two roll is " << p2RollScore << endl;
+                    cout << "Player One Score is " << game.getplayerOneScore() << endl;
+                    cout << "Player Two Score is " << game.getplayerTwoScore() << endl;
+                    cout << "Player One dice being used is " << game.getDiceType(0) << endl;
+                    cout << "Player Two dice being used is " << game.getDiceType(1) << endl;
+                }
+                else if (p1RollScore > p2RollScore) {
+                    cout << "Player One Wins!\n";
+                    cout << "Player one roll is " << p1RollScore << endl;
+                    cout << "Player two roll is " << p2RollScore << endl;
+                    cout << "Player One Score is " << game.getplayerOneScore() << endl;
+                    cout << "Player Two Score is " << game.getplayerTwoScore() << endl;
+                    cout << "Player One dice being used is " << game.getDiceType(0) << endl;
+                    cout << "Player Two dice being used is " << game.getDiceType(1) << endl;
+                    game.addplayerOneScore();
+                }
+                else if (p1RollScore < p2RollScore) {
+                    cout << "Player Two wins!\n";
+                    cout << "Player one roll is " << p1RollScore << endl;
+                    cout << "Player two roll is " << p2RollScore << endl;
+                    cout << "Player One Score is " << game.getplayerOneScore() << endl;
+                    cout << "Player Two Score is " << game.getplayerTwoScore() << endl;
+                    cout << "Player One dice being used is " << game.getDiceType(0) << endl;
+                    cout << "Player Two dice being used is " << game.getDiceType(1) << endl;
+                    game.addplayerTwoScore();
+                }
+                else {
+                    cout << "error calculating which player roll is higher!\n";
+                }
+
+
 
                 // output results
                 // type of die and # of sides
-                cout << "Player One dice being used is " << game.getDiceType(0) << endl;
-                cout << "Player Two dice being used is " << game.getDiceType(1) << endl;
+//                cout << "Player One dice being used is " << game.getDiceType(0) << endl;
+//                cout << "Player Two dice being used is " << game.getDiceType(1) << endl;
                 // score result
                 // number each player rolls
-                cout << "Player One Score is " << game.getplayerOneScore() << endl;
-                cout << "Player Two Score is " << game.getplayerTwoScore() << endl;
+//                cout << "Player One Score is " << game.getplayerOneScore() << endl;
+//                cout << "Player Two Score is " << game.getplayerTwoScore() << endl;
 
-                cout << "Round #" << round+1 << endl;
+                cout << "End of Round #" << round+1 << endl;
                 cout << "Hit [Enter] to continue\n";
                 cin.get();
 

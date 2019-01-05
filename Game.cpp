@@ -176,11 +176,11 @@ void Game::setSidesChosenDice(Die &obj1, LoadedDie &obj2) {
         submenuSides(player+1);     // internal private member function call
         if (getDiceType(player) == NORMAL) {
             setSides( obj1, validateNumber(3, 20) );
-            cout << "Sides stored in Die object " << obj1.getSides() << endl;
+//            cout << "Sides stored in Die object " << obj1.getSides() << endl;
         }
         else if (getDiceType(player) == LOADED) {
             setSides( obj2, validateNumber(3, 20) );
-            cout << "Sides stored in loadedDie object " << obj2.getSides() << endl;
+//            cout << "Sides stored in loadedDie object " << obj2.getSides() << endl;
         }
         else {
             cout << "Error setting the number of sides!\n";
@@ -208,16 +208,16 @@ void Game::setplayerTwoScore(int score) {
 ** Description:     parameter takes an int value to add to player one
 **                  score
 *********************************************************************/
-void Game::addplayerOneScore(int score) {
-    playerOneScore += score;
+void Game::addplayerOneScore() {
+    playerOneScore += 1;
 }
 
 /*********************************************************************
 ** Description:     parameter takes an int value to add to player two
 **                  score
 *********************************************************************/
-void Game::addplayerTwoScore(int score) {
-    playerTwoScore += score;
+void Game::addplayerTwoScore() {
+    playerTwoScore += 1;
 }
 
 /*********************************************************************

@@ -16,46 +16,53 @@ LoadedDie::LoadedDie(int num) : Die{num} {}
 ** Description:     this function returns an integer from 1 to N where
 **                  the average output of rolling it several times is
 **                  higher that of a Die object with the same number
-**                  of sides.
+**                  of sides. Algorithm explanation below.
 *********************************************************************/
 int LoadedDie::randomInt() {
-    // algorithm: create a vector with a total number of elements that is equal to
-    // the sum of the arithmetic sequence of N i.e., elements in vector = (N + 1) / 2
-    // The elements being pushed on to the array is equal to N starting with N = 1.
-    // N elements are pushed on to the array N number of times.
-    // take N int values and change them so that the average
-    // output of rolling it out is higher than the die object with the same
-    // number of sides
-    // Create an array and using the 1-N array and store such that elements up to N
-    // are increased as shown in the diagram
-    // 1,
-    // 22,
-    // 333,
-    // 4444,
-    // 5555,
-    // 666666
+    // algorithm: create a vector with a total number of elements that
+    // is equal to the sum of the arithmetic sequence of N i.e., elements
+    // in vector should be equal to = (N + 1) / 2. The values pushed
+    // into the vector starts with one all they way up to N.
+    // 1,       push 1, once
+    // 22,      push 2, twice
+    // 333,     push 3, three times
+    // 4444,    push 4, four times
+    // 5555,    push 5, five times
+    // 666666   push 6, six times
 
-    vector<int> loadedValues;
-    unsigned seed;
-    int randomNum;
-    seed = static_cast<unsigned int>(time(nullptr));
-    srand(seed);
+    vector<int> loadedValues;               // create vector to hold values
+    unsigned seed;                          // random number variables
+    int randomNum;                          // hold an unbiased, random value from 1 to N
+    seed = static_cast<unsigned int>(time(nullptr));    // random number variables
+    srand(seed);                            // random number variables
 
-    // sum of arithmetic sequence is total elements in vector
+    // vector elements is equal to the sum of an arithmetic sequence N
     int vectorElements = ((N + 1) * N) / 2;
 
     // computer random number between 1 and vectorElements
-    randomNum = rand() % vectorElements + 1;
+    randomNum = rand() % vectorElements;
 
     // push a total of vectorElements into vector starting with n = 1
-    for (int n = 1; n <= vectorElements; n++ ) {
+    std::cout << "Value being stored in n\n";
+    for (int n = 1; n <= N; n++ ) {
         for ( int count = 1; count <= n; count++) {
-            // push back n an n number of times
+            std::cout << n;
             loadedValues.push_back( n );
         }
+        std::cout << std::endl;
     }
+
+    std::cout << "\nValue of vectorElements is " << vectorElements << std::endl;
+    std::cout << "Value of N is " << N << std::endl;
+    std::cout << "Values in loaded vector\n";
+    for (int val: loadedValues) {
+        std::cout << val << " ";
+    }
+
+    std::cout << std::endl;
 
     // return a random element from a vector that has been "loaded" i.e.
     // a biased dice
+    std::cout << "random integer being returned by loadedDie is " <<  loadedValues[randomNum] << std::endl;
     return loadedValues[randomNum];
 }
