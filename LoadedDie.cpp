@@ -17,7 +17,11 @@ int LoadedDie::randomInt() {
     int randomNum;
     seed = static_cast<unsigned int>(time(nullptr));
     srand(seed);
-    randomNum = rand() % N + 1;
+
+    // sum of arithmetic sequence is total elements in vector
+    int vectorElements = ((N + 1) * N) / 2;
+
+    randomNum = rand() % vectorElements + 1;
 
 //    int rollNum = Die::randomInt();   // call to over-ridden function in base class
 
@@ -35,8 +39,7 @@ int LoadedDie::randomInt() {
     // output of rolling it out is higher than the die object with the same
     // number of sides
 
-    // sum of arithmetic sequence is total elements in vector
-    int vectorElements = ((N + 1) * N) / 2;
+
 
     // push a total of vectorElements into vector starting with n = 1
     for (int n = 1; n <= vectorElements; n++ ) {
@@ -47,15 +50,14 @@ int LoadedDie::randomInt() {
 
 //
 //    // display N int values in vector
-//    std::cout << "Displaying loaded vector values:  ";
-//    for (int n = 0; n < val; n++) {
-//        std::cout << loadedValues[n] << " ";
-//    }
-//    std::cout << std::endl;
-    int rollNum = Die::randomInt();
-    std::cout << " score rolled is " << randomNum << std::endl;
+    std::cout << "\nDisplaying loaded vector values:  ";
+    for (int n = 0; n < vectorElements; n++) {
+        std::cout << loadedValues[n] << " ";
+    }
 
-    return loadedValues[rollNum];
+    std::cout << " loaded score rolled is " << loadedValues[randomNum] << std::endl;
+
+    return loadedValues[randomNum];
 }
 
 //int LoadedDie::load(int n) {
