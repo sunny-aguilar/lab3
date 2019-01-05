@@ -13,7 +13,6 @@ public:
     LoadedDie();
     LoadedDie(int num);
     int randomInt();
-
 };
 
 #endif
