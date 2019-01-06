@@ -156,7 +156,7 @@ void Game::submenuDiceType(int player)
 ** Description:     takes a bool parameter to indicate if dice is
 **                  loaded
 *********************************************************************/
-void Game::setDiceType(int player, int type)
+void Game::setDiceType(const int player, const int type)
 {
     switch (type) {
         case 1:
@@ -173,7 +173,7 @@ void Game::setDiceType(int player, int type)
 /*********************************************************************
 ** Description:     returns player dice type
 *********************************************************************/
-Dice Game::getDiceType(int player)
+Dice Game::getDiceType(const int player)
 {
     if (player <=2 && player >=0) {
         return diceType[player];
@@ -187,7 +187,7 @@ Dice Game::getDiceType(int player)
 /*********************************************************************
 ** Description:     asks user for N sides of dice
 *********************************************************************/
-void Game::submenuSides(int player)
+void Game::submenuSides(const int player)
 {
     cout << "\nEnter the number of sides on the dice\n"
          << "for player #" << player
@@ -275,7 +275,7 @@ int Game::getRollValue(Die &obj1, LoadedDie &obj2, int player)
 ** Description:     parameter takes an int value to set player one
 **                  score
 *********************************************************************/
-void Game::setplayerOneScore(int score)
+void Game::setplayerOneScore(const int score)
 {
     playerOneScore = score;
 }
@@ -284,7 +284,7 @@ void Game::setplayerOneScore(int score)
 ** Description:     parameter takes an int value to set player two
 **                  score
 *********************************************************************/
-void Game::setplayerTwoScore(int score)
+void Game::setplayerTwoScore(const int score)
 {
     playerTwoScore = score;
 }
@@ -296,7 +296,7 @@ void Game::setplayerTwoScore(int score)
 **                  value each player rolled and use to determine the
 **                  winner
 *********************************************************************/
-string Game::updatePlayerScore(int p1Roll, int p2Roll) {
+string Game::updatePlayerScore(const int p1Roll, const int p2Roll) {
     if (p1Roll == p2Roll) {
         return "No player wins the round\n";
     }
@@ -351,7 +351,7 @@ int Game::getplayerTwoScore()
 /*********************************************************************
 ** Description:    displays detailed results of each round
 *********************************************************************/
-void Game::submenueReport(std::string winner, int p1Roll, int p2Roll, int round)
+void Game::submenueReport(string winner, int p1Roll, int p2Roll, int round)
 {
     cout << "/******************************************/\n"
          << "      Round #" << round << "- Winner & Score Report\n"
