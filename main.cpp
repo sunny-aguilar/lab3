@@ -19,11 +19,9 @@ using std::cout;
 using std::endl;
 
 int main() {
-    Die die(6);
-    LoadedDie loadedDie(6);
-//    cout << "Die " << die.randomInt() << endl;
-//    cout << "Loaded Die " << loadedDie.randomInt() << endl;
-
+    // create objects of each class
+    Die die(0);
+    LoadedDie loadedDie(0);
     Game game;
 
     // show main menu and validate selection entered

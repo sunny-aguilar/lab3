@@ -1,8 +1,9 @@
 /*********************************************************************
 ** Author:          Sandro Aguilar
 ** Date:            Jan 2019
-** Description:     asdf
-**                  asdf
+** Description:     This dice class creates an object that has a
+**                  member function that returns a random integer from
+ *                  1 to N. Includes setter/getters for N.
 *********************************************************************/
 #include "Die.hpp"
 #include <ctime>
