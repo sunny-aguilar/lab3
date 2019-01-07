@@ -46,4 +46,4 @@ debug:
 	valgrind -v --leak-check=full --show-leak-kinds=all --track-origins=yes ./lab3
 
 zip:
-	zip -D Lab3_Aguilar_Sandro.zip $(CPPs) $(HPPs) $(TXTS) makefile *.txt *.pdf
+	zip -D Lab3_Aguilar_Sandro.zip $(CPPs) $(HPPs) $(TXTS) makefile *.txt
