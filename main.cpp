@@ -71,7 +71,7 @@ int main() {
                 cin.get();
             }
 
-            // ask user if they want to play again
+            // ask user if they want to play again and play again or quit
             game.submenuReplay();
             game.setSelection( game.validateNumber(1, 2) );
             if (game.getSelection() == 2) {
@@ -87,13 +87,15 @@ int main() {
 
         } while (playAgain);
 
+        // game has ended message
         cout << "Game finished\n";
     }
     else if (game.getSelection() == 2) {
-        // user quit the program in the main menu
+        // user quit the program in the main menu and game quits
         game.submenuGameOver();
     }
     else {
+        // error processing main menu input
         cout << "Error processing your request!\n";
     }
 
