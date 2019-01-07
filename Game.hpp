@@ -32,7 +32,7 @@ public:
     void submenuDiceType(int player);           // show dice type menu
     void setDiceType(int player, int type);     // setter for dice typ
     Dice getDiceType(int player);               // getter for dice type
-    void setSidesChosenDice(Die &obj1, LoadedDie &obj2);        // setter
+    void setSidesChosenDice(Die &obj1, LoadedDie &obj2, int min, int max);        // setter
     int getRollValue(Die &obj1, LoadedDie &obj2, int player);   // get roll
     void setplayerOneScore(int score);          // setter for player 1 score
     void setplayerTwoScore(int score);          // setter for player 2 score
@@ -51,7 +51,7 @@ protected:
     int playerTwoScore;                         // hold player2 score
 
 private:
-    void submenuSides(int player);              // internal use function
+    void submenuSides(int player, int minSides, int maxSides); // internal use function
     void setSides(Die &obj, int sides);         // setter for Die sides
     void setSides(LoadedDie &obj, int sides);   // setter for loadedDie sides
     void addplayerOneScore();                   // increase to player 1 score

@@ -24,10 +24,12 @@ int main() {
     Die die(0);
     LoadedDie loadedDie(1);
     Game game;
-    const int MIN_SEL = 0;              // hold min menu selection
-    const int MAX_SEL = 1000;           // hold max menu selection
+    const int MIN_SEL = 1;              // hold min menu selection
+    const int MAX_SEL = 2;              // hold max menu selection
     const int MIN_ROUND = 1;            // hold min number of rounds
     const int MAX_ROUND = 1000;         // hold max number of rounds
+    const int MIN_SIDES = 3;
+    const int MAX_SIDES = 20;
 
     // show main menu and validate selection entered
     game.showStartMenu();
@@ -53,7 +55,7 @@ int main() {
             }
 
             // ask user for number of sides for dice of both players
-            game.setSidesChosenDice(die, loadedDie);
+            game.setSidesChosenDice(die, loadedDie, MIN_SIDES, MAX_SIDES);
 
             // loop through the rounds to play
             for (int round = 0; round < game.getRounds(); round++) {
