@@ -1,8 +1,11 @@
 /*********************************************************************
 ** Author:          Sandro Aguilar
 ** Date:            Jan 2019
-** Description:     asdf
-**                  asdf
+** Description:     This class is a subclass of the Die class. This
+**                  dice subclass creates an object that has a
+**                  member function that returns a random integer from
+**                  1 to N. However, it is loaded because the odds of
+**                  rolling a higher value are greater.
 *********************************************************************/
 #ifndef LOADEDDIE_HPP
 #define LOADEDDIE_HPP

@@ -84,8 +84,9 @@ int Game::validateNumber(int min, int max) {
                 isNotDigit = true;
             }
         }
-        if (isNotDigit)
+        if (isNotDigit) {
             cout << "enter only digits!\n";
+        }
 
         // check if characters entered are within range
         notInRange = false;
@@ -350,12 +351,15 @@ void Game::submenueReport(string winner, int p1Roll, int p2Roll, int round) {
     // display this report once all rounds are over to announce winner
     if ( round == getRounds() ) {
         cout << "\n\n>> All rounds are over - and the winner is...\n";
-        if ( getplayerOneScore() > getplayerTwoScore() )
+        if ( getplayerOneScore() > getplayerTwoScore() ) {
             cout << ">> PLAYER ONE!\n";
-        else if ( getplayerOneScore() < getplayerTwoScore() )
+        }
+        else if ( getplayerOneScore() < getplayerTwoScore() ) {
             cout << ">> PLAYER TWO!\n";
-        else
+        }
+        else {
             cout << "GAME IS A TIE!\n";
+        }
     }
 }
 
