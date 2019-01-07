@@ -7,7 +7,8 @@
 **                  is considered a draw and no one gets a point.
  *                  Implemented using a Game class, a Die class, and
  *                  a loadedDie class. Die class is the superclass and
- *                  the loadedDie class is the sub class.
+ *                  the loadedDie class is the sub class. Program can
+ *                  be run by running make with the supplies files.
  *********************************************************************/
 #include "Die.hpp"
 #include "LoadedDie.hpp"

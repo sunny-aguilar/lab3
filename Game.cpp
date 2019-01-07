@@ -276,37 +276,41 @@ void Game::setplayerTwoScore(const int score) {
 **                  scores by adding 1 to the winner's score. The
 **                  parameters received are used to compare the roll
 **                  value each player rolled and use to determine the
-**                  winner
+**                  winner.
 *********************************************************************/
 string Game::updatePlayerScore(const int p1Roll, const int p2Roll) {
     if (p1Roll == p2Roll) {
+        // tie game, no one scores
         return "No player wins the round\n";
     }
     else if (p1Roll > p2Roll) {
+        // player 1 wins, increase their score
         addplayerOneScore();
         return "Player one wins the round!\n";
     }
     else if (p1Roll < p2Roll) {
+        // player 2 wins, increase their score
         addplayerTwoScore();
         return "Player two wins the round!\n";
     }
     else {
+        // error updating scores
         cout << "error calculating which player roll is higher!\n";
         return "error calculating which player roll is higher";
     }
 }
 
 /*********************************************************************
-** Description:     parameter takes an int value to add to player one
-**                  score
+** Description:     Increases player one score by 1. Internal class
+**                  function.
 *********************************************************************/
 void Game::addplayerOneScore() {
     playerOneScore += 1;
 }
 
 /*********************************************************************
-** Description:     parameter takes an int value to add to player two
-**                  score
+** Description:     Increases player two score by 1. Internal class
+**                  function.
 *********************************************************************/
 void Game::addplayerTwoScore() {
     playerTwoScore += 1;

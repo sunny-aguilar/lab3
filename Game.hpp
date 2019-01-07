@@ -27,14 +27,12 @@ public:
     void setDiceType(int player, int type);     // setter for dice typ
     Dice getDiceType(int player);               // getter for dice type
 
-    void setSides(LoadedDie &obj, int sides);   // setter for loadedDie sides
     void setSidesChosenDice(Die &obj1, LoadedDie &obj2);        // setter
     int getRollValue(Die &obj1, LoadedDie &obj2, int player);   // get roll
     void setplayerOneScore(int score);          // setter for player 1 score
     void setplayerTwoScore(int score);          // setter for player 2 score
     string updatePlayerScore(int p1Roll, int p2Roll);   // update player scores
-    void addplayerOneScore();                   // increase to player 1 score
-    void addplayerTwoScore();                   // increase player 2 score
+
     int getplayerOneScore();                    // getter for player one score
     int getplayerTwoScore();                    // getter for player two score
     void submenueReport(std::string winner, int p1Roll, int p2Roll, int round);
@@ -51,6 +49,9 @@ protected:
 private:
     void submenuSides(int player);              // internal use function
     void setSides(Die &obj, int sides);         // setter for Die sides
+    void setSides(LoadedDie &obj, int sides);   // setter for loadedDie sides
+    void addplayerOneScore();                   // increase to player 1 score
+    void addplayerTwoScore();                   // increase player 2 score
 };
 
 #endif
