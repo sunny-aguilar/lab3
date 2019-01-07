@@ -1,7 +1,7 @@
 /*********************************************************************
 ** Author:          Sandro Aguilar
 ** Date:            Jan 2019
-** Description:     asdf
+** Description:     Game class
 **                  asdf
 *********************************************************************/
 #include "Game.hpp"

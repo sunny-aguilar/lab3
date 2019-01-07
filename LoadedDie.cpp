@@ -1,8 +1,11 @@
 /*********************************************************************
 ** Author:          Sandro Aguilar
 ** Date:            Jan 2019
-** Description:     asdf
-**                  asdf
+** Description:     This class is a subclass of the Die class. This
+**                  dice subclass creates an object that has a
+**                  member function that returns a random integer from
+**                  1 to N. However, it is loaded because the odds of
+**                  rolling a higher value are greater.
 *********************************************************************/
 #include "LoadedDie.hpp"
 #include <ctime>
@@ -11,7 +14,7 @@ using std::vector;
 
 /*********************************************************************
 ** Description:     no-args default constructor that also calls the
-**                  base class no-args constructor
+**                  base class no-args constructor0
 *********************************************************************/
 LoadedDie::LoadedDie() : Die{} {};
 

@@ -31,7 +31,7 @@ int Die::randomInt() {
     seed = static_cast<unsigned int>(time(nullptr));
     srand(seed);
     randomNum = rand() % N + 1;
-    return randomNum;
+    return randomNum;       // return random integer
 }
 
 /*********************************************************************
