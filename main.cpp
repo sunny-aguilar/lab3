@@ -22,12 +22,16 @@ using std::endl;
 int main() {
     // create objects of each class
     Die die(0);
-    LoadedDie loadedDie(0);
+    LoadedDie loadedDie(1);
     Game game;
+    const int MIN_SEL = 0;
+    const int MAX_SEL = 1000;
+    const int MIN_ROUND = 0;
+    const int MAX_ROUND = 1000;
 
     // show main menu and validate selection entered
     game.showStartMenu();
-    game.setSelection( game.validateNumber(1, 2) );
+    game.setSelection( game.validateNumber(MIN_SEL, MAX_SEL) );
 
     // begin the game
     if (game.getSelection() == 1) {
@@ -39,12 +43,12 @@ int main() {
         do {
             // prompt user to enter rounds and validate it
             game.submenuRounds();
-            game.setRounds( game.validateNumber(1, 1000) );
+            game.setRounds( game.validateNumber(MIN_ROUND, MAX_ROUND) );
 
             //  ask user the type of die for each player
             for (int player = 0; player < 2; player++) {
                 game.submenuDiceType(player+1);
-                game.setSelection( game.validateNumber(1, 2) );
+                game.setSelection( game.validateNumber(MIN_SEL, MAX_SEL) );
                 game.setDiceType( player, game.getSelection() );
             }
 
@@ -73,7 +77,7 @@ int main() {
 
             // ask user if they want to play again and play again or quit
             game.submenuReplay();
-            game.setSelection( game.validateNumber(1, 2) );
+            game.setSelection( game.validateNumber(MIN_SEL, MAX_SEL) );
             if (game.getSelection() == 2) {
                 // control statement to play again
                 game.submenuGameOver();
