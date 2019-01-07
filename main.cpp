@@ -30,13 +30,15 @@ int main() {
 
     // begin the game
     if (game.getSelection() == 1) {
+        // track if player wants to play again
+        bool playAgain;
+
         // user plays the game
         cout << "\nStarting Game\n\n";
-
-        bool playAgain;
         do {
-            // ask user how many rounds to play
+            // show menu that asks user how many rounds to play
             game.submenuRounds();
+            // get user validated user input
             game.setRounds( game.validateNumber(1, 1000) );
 
             //  ask user the type of die for each player

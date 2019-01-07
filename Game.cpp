@@ -199,7 +199,11 @@ void Game::setSides(LoadedDie &obj, int sides) {
 *********************************************************************/
 void Game::setSidesChosenDice(Die &obj1, LoadedDie &obj2) {
     for (int player = 0; player < 2; player++) {
-        submenuSides(player+1);     // internal private member function call
+        // internal private member function call that displays menu
+        // asking user to enter total sides on dice
+        submenuSides(player+1);
+
+        // check each player's chosen dice type and set its sides
         if (getDiceType(player) == NORMAL) {
             setSides( obj1, validateNumber(3, 20) );
         }
