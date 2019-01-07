@@ -24,10 +24,10 @@ int main() {
     Die die(0);
     LoadedDie loadedDie(1);
     Game game;
-    const int MIN_SEL = 0;
-    const int MAX_SEL = 1000;
-    const int MIN_ROUND = 0;
-    const int MAX_ROUND = 1000;
+    const int MIN_SEL = 0;              // hold min menu selection
+    const int MAX_SEL = 1000;           // hold max menu selection
+    const int MIN_ROUND = 1;            // hold min number of rounds
+    const int MAX_ROUND = 1000;         // hold max number of rounds
 
     // show main menu and validate selection entered
     game.showStartMenu();
