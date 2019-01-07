@@ -185,7 +185,7 @@ void Game::submenuSides(const int player) {
 
 /*********************************************************************
 ** Description:     param takes a dice object to set its sides
-**                  called internally, MAKE PRIVATE
+**                  called internally by setSidesChosenDice(...
 *********************************************************************/
 void Game::setSides(Die &obj, int sides) {
     obj.setSides(sides);
@@ -224,12 +224,13 @@ void Game::setSidesChosenDice(Die &obj1, LoadedDie &obj2) {
 /*********************************************************************
 ** Description:     function returns a random int value from either a
 **                  normal die or a loaded die depending on the die
- *                  selected by the players. Takes Dice object
- *                  parameters by reference and assigns the resulting
- *                  values to p1RollScore /p2RollScore
+ *                  being used by the players. Takes Dice object
+ *                  parameters by reference and returns the resulting
+ *                  value.
 *********************************************************************/
 int Game::getRollValue(Die &obj1, LoadedDie &obj2, int player)
 {
+    // return a random integer from a normal dice
     if (getDiceType(player) == NORMAL) {
         if (player == 0) {
             return obj1.randomInt();
@@ -238,6 +239,7 @@ int Game::getRollValue(Die &obj1, LoadedDie &obj2, int player)
             return obj1.randomInt();
         }
     }
+    // return a random but loaded integer
     else if (getDiceType(player) == LOADED) {
         if (player == 0) {
             return obj2.randomInt();
@@ -247,6 +249,7 @@ int Game::getRollValue(Die &obj1, LoadedDie &obj2, int player)
         }
     }
     else {
+        // error message if error in getting dice type
         cout << "Error getting roll value!\n";
         return 0;
     }
