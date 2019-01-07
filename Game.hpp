@@ -1,8 +1,14 @@
 /*********************************************************************
 ** Author:          Sandro Aguilar
 ** Date:            Jan 2019
-** Description:     asdf
-**                  asdf
+** Description:     Game class implements the dice-rolling game. It
+**                  sets the game elements such as showing menus,
+ *                  validating user data, as well as keeping score.
+ *                  The game class is not derived from and it is not
+ *                  derived. Internal functions are labeled as private.
+ *                  The class protected variables are used to set the
+ *                  games parameters such as rounds to play and type of
+ *                  dice to use .
 *********************************************************************/
 #ifndef GAME_HPP
 #define GAME_HPP
