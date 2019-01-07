@@ -26,13 +26,11 @@ public:
     void submenuDiceType(int player);           // show dice type menu
     void setDiceType(int player, int type);     // setter for dice typ
     Dice getDiceType(int player);               // getter for dice type
-
     void setSidesChosenDice(Die &obj1, LoadedDie &obj2);        // setter
     int getRollValue(Die &obj1, LoadedDie &obj2, int player);   // get roll
     void setplayerOneScore(int score);          // setter for player 1 score
     void setplayerTwoScore(int score);          // setter for player 2 score
     string updatePlayerScore(int p1Roll, int p2Roll);   // update player scores
-
     int getplayerOneScore();                    // getter for player one score
     int getplayerTwoScore();                    // getter for player two score
     void submenueReport(std::string winner, int p1Roll, int p2Roll, int round);
