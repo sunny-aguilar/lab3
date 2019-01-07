@@ -66,7 +66,7 @@ int main() {
                 // display game results after each round
                 game.submenueReport(winner, p1RollScore, p2RollScore, round+1);
 
-                // end of round
+                // end of round pause to view game report
                 cout << "\nHit [Enter] to continue\n";
                 cin.get();
             }
