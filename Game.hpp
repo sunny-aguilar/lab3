@@ -26,7 +26,7 @@ public:
     void submenuDiceType(int player);           // show dice type menu
     void setDiceType(int player, int type);     // setter for dice typ
     Dice getDiceType(int player);               // getter for dice type
-    void setSides(Die &obj, int sides);         // setter for Die sides
+
     void setSides(LoadedDie &obj, int sides);   // setter for loadedDie sides
     void setSidesChosenDice(Die &obj1, LoadedDie &obj2);        // setter
     int getRollValue(Die &obj1, LoadedDie &obj2, int player);   // get roll
@@ -50,6 +50,7 @@ protected:
 
 private:
     void submenuSides(int player);              // internal use function
+    void setSides(Die &obj, int sides);         // setter for Die sides
 };
 
 #endif

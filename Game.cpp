@@ -44,7 +44,7 @@ void Game::setSelection(int sel) {
 }
 
 /*********************************************************************
-** Description:     getter sgets the selection made in the main menu
+** Description:     gets the selection made in the main menu
 *********************************************************************/
 int Game::getSelection() {
     return selection;
@@ -52,7 +52,9 @@ int Game::getSelection() {
 
 /*********************************************************************
 ** Description:     general validator where the parameters are the
-**                  min and max numbers acceptable
+**                  min and max numbers acceptable. Checks user input
+ *                  for non-digit characters, number of digits entered,
+ *                  and if within valid range.
 *********************************************************************/
 int Game::validateNumber(int min, int max) {
     char choice[100];
@@ -66,6 +68,7 @@ int Game::validateNumber(int min, int max) {
     long unsigned length = std::to_string(max).length();
 
     do {
+        // store user input
         cin.getline(choice, 100);
 
         // reject any input that has more than digits than max parameter
@@ -85,6 +88,7 @@ int Game::validateNumber(int min, int max) {
             }
         }
         if (isNotDigit) {
+            // prompt user to enter only digits
             cout << "enter only digits!\n";
         }
 

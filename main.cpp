@@ -36,9 +36,8 @@ int main() {
         // user plays the game
         cout << "\nStarting Game\n\n";
         do {
-            // show menu that asks user how many rounds to play
+            // prompt user to enter rounds and validate it
             game.submenuRounds();
-            // get user validated user input
             game.setRounds( game.validateNumber(1, 1000) );
 
             //  ask user the type of die for each player
