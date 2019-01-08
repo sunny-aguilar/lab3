@@ -12,6 +12,7 @@
 *********************************************************************/
 #ifndef GAME_HPP
 #define GAME_HPP
+
 #include "Die.hpp"
 #include "LoadedDie.hpp"
 #include <iostream>
