@@ -13,7 +13,7 @@
 #include "Game.hpp"
 #include <iostream>
 #include <string>
-#include <cstring>
+
 #include <sstream>
 using std::cin;
 using std::cout;
