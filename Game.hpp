@@ -14,7 +14,13 @@
 #define GAME_HPP
 #include "Die.hpp"
 #include "LoadedDie.hpp"
+#include <iostream>
 #include <string>
+#include <cstring>
+#include <sstream>
+using std::cin;
+using std::cout;
+using std::endl;
 using std::string;
 
 enum Dice {UNSET, NORMAL, LOADED};              // enum datatype for dice

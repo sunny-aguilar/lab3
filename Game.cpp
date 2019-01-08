@@ -11,14 +11,7 @@
  *                  dice to use .
 *********************************************************************/
 #include "Game.hpp"
-#include <iostream>
-#include <string>
 
-#include <sstream>
-using std::cin;
-using std::cout;
-using std::endl;
-using std::string;
 
 /*********************************************************************
 ** Description:     no-args default constructor that sets the member
