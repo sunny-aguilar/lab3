@@ -8,9 +8,7 @@
 **                  rolling a higher value are greater.
 *********************************************************************/
 #include "LoadedDie.hpp"
-#include <ctime>
-#include <vector>
-using std::vector;
+
 
 /*********************************************************************
 ** Description:     no-args default constructor that also calls the

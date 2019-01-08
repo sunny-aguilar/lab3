@@ -9,7 +9,11 @@
 *********************************************************************/
 #ifndef LOADEDDIE_HPP
 #define LOADEDDIE_HPP
+
 #include "Die.hpp"
+#include <ctime>
+#include <vector>
+using std::vector;
 
 class LoadedDie : public Die {
 public:
