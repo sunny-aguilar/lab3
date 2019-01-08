@@ -6,7 +6,11 @@
 *********************************************************************/
 #ifndef DIE_HPP
 #define DIE_HPP
+
 #include <iostream>
+#include <ctime>
+#include <vector>
+using std::vector;
 
 class Die {
 public:

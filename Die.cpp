@@ -7,9 +7,7 @@
  *                  is the base class for LoadedDie class.
 *********************************************************************/
 #include "Die.hpp"
-#include <ctime>
-#include <vector>
-using std::vector;
+
 
 /*********************************************************************
 ** Description:     no-args default constructor that sets the number
