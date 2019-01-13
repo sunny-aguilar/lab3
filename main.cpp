@@ -20,7 +20,8 @@ using std::cout;
 using std::endl;
 
 int main() {
-    unsigned seed = static_cast<unsigned int>(time(nullptr));    // random number variables
+    // create random number generator
+    auto seed = static_cast<unsigned int>(time(nullptr));    // random number variables
     srand(seed);
 
     // create objects of each class
