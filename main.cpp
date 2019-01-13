@@ -21,7 +21,7 @@ using std::endl;
 
 int main() {
     // create random number generator
-    auto seed = static_cast<unsigned int>(time(nullptr));    // random number variables
+    auto seed = static_cast<unsigned int>(time(nullptr));
     srand(seed);
 
     // create objects of each class
