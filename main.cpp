@@ -20,6 +20,9 @@ using std::cout;
 using std::endl;
 
 int main() {
+    unsigned seed = static_cast<unsigned int>(time(nullptr));    // random number variables
+    srand(seed);
+
     // create objects of each class
     Die die(0);
     LoadedDie loadedDie(1);

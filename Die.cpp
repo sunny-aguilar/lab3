@@ -25,12 +25,9 @@ Die::Die(int num) : N{num} { setSides(num); }
 ** Description:     returns a random integer from 1 to N
 *********************************************************************/
 int Die::randomInt() {
-    unsigned seed;
-    int randomNum;
-    seed = static_cast<unsigned int>(time(nullptr));
-    srand(seed);
-    randomNum = rand() % N + 1;
-    return randomNum;       // return random integer
+    int randomNum;              // hold random number
+    randomNum = rand() % N + 1; // computer random # from 1 to N
+    return randomNum;           // return random integer
 }
 
 /*********************************************************************

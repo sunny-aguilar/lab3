@@ -38,19 +38,16 @@ int LoadedDie::randomInt() {
     // 22,      push 2, twice
     // 333,     push 3, three times
     // 4444,    push 4, four times
-    // 5555,    push 5, five times
+    // 55555,   push 5, five times
     // 666666   push 6, six times
 
     vector<int> loadedValues;               // create vector to hold values
-    unsigned seed;                          // random number variables
     int randomNum;                          // hold an unbiased, random value from 1 to N
-    seed = static_cast<unsigned int>(time(nullptr));    // random number variables
-    srand(seed);                            // random number variables
 
     // vector elements is equal to the sum of an arithmetic sequence N
     int vectorElements = ((N + 1) * N) / 2;
 
-    // computer random number between 1 and vectorElements
+    // compute random number between 1 and vectorElements
     randomNum = rand() % vectorElements;
 
     // push a total of vectorElements into vector starting with n = 1
