@@ -8,7 +8,7 @@
  *                  derived. Internal functions are labeled as private.
  *                  The class protected variables are used to set the
  *                  games parameters such as rounds to play and type of
- *                  dice to use .
+ *                  dice to use.
 *********************************************************************/
 #ifndef GAME_HPP
 #define GAME_HPP
