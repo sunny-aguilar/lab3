@@ -30,7 +30,7 @@ void Game::playGame() {
 
     if (getSelection() == 1) {
         // track if player wants to play again
-        bool playAgain;
+
 
         // user plays the game
         cout << "\nStarting Game\n\n";
@@ -54,20 +54,10 @@ void Game::playGame() {
 
 
             // ask user if they want to play again and play again or quit
-            submenuReplay();
-            setSelection( validateNumber(1, 2) );
-            if (getSelection() == 2) {
-                // control statement to play again
-                submenuGameOver();
-                playAgain = false;
-            }
-            else {
-                playAgain = true;
-                setplayerOneScore(0);
-                setplayerTwoScore(0);
-            }
 
-        } while (playAgain);
+
+
+        } while (replay());
 
         // game has ended message
         cout << "Game finished\n";
@@ -465,6 +455,23 @@ void Game::submenueReport(string winner, int p1Roll, int p2Roll, int round) {
             cout << "GAME IS A TIE!\n";
         }
     }
+}
+
+bool Game::replay() {
+    bool playAgain;
+    submenuReplay();
+    setSelection( validateNumber(1, 2) );
+    if (getSelection() == 2) {
+        // control statement to play again
+        submenuGameOver();
+        playAgain = false;
+    }
+    else {
+        playAgain = true;
+        setplayerOneScore(0);
+        setplayerTwoScore(0);
+    }
+    return playAgain;
 }
 
 /*********************************************************************

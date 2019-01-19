@@ -53,6 +53,8 @@ public:
     int getplayerOneScore();                    // getter for player one score
     int getplayerTwoScore();                    // getter for player two score
     void submenueReport(std::string winner, int p1Roll, int p2Roll, int round);
+    bool replay();
+
     void submenuReplay();                       // show replay menu
     void submenuGameOver();                     // show game over menu
 
