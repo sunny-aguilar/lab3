@@ -6,7 +6,8 @@
 **                  member function that returns a random integer from
 **                  1 to N (over-rides base class member function).
 **                  However, it is loaded because the odds of rolling
-**                   a higher value are greater.
+**                  a higher value are greater. This class inherits
+**                  publicly from its base class.
 *********************************************************************/
 #ifndef LOADEDDIE_HPP
 #define LOADEDDIE_HPP
