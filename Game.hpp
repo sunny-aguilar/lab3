@@ -29,6 +29,7 @@ enum Dice {UNSET, NORMAL, LOADED};              // enum datatype for dice
 class Game {
 public:
     Game();                                     // default constructor
+    void playGame();
     void showStartMenu();                       // show start menu
     int validateNumber(int min, int max);       // validate data
     void setSelection(int sel);                 // setter of selection
@@ -63,6 +64,8 @@ private:
     void setSides(LoadedDie &obj, int sides);   // setter for loadedDie sides
     void addplayerOneScore();                   // increase to player 1 score
     void addplayerTwoScore();                   // increase player 2 score
+    Die dice;
+    LoadedDie loadedDice;
 };
 
 #endif

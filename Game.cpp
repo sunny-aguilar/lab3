@@ -22,6 +22,81 @@ Game::Game()
     playerOneScore{0}, playerTwoScore{0} {
 }
 
+void Game::playGame() {
+    showStartMenu();
+    setSelection(validateNumber(1,2));
+
+    if (getSelection() == 1) {
+        // track if player wants to play again
+        bool playAgain;
+
+        // user plays the game
+        cout << "\nStarting Game\n\n";
+        do {
+            // prompt user to enter rounds and validate it
+            submenuRounds();
+            setRounds( validateNumber(1, 1000) );
+
+            //  ask user the type of die for each player
+            for (int player = 0; player < 2; player++) {
+                submenuDiceType(player+1);
+                setSelection( validateNumber(1, 2) );
+                setDiceType( player, getSelection() );
+            }
+
+            // ask user for number of sides for dice of both players
+            setSidesChosenDice(dice, loadedDice, 3, 20);
+
+            // loop through the rounds to play
+            for (int round = 0; round < getRounds(); round++) {
+
+                // roll dice for player 1 and player 2 and assign values to variables
+                int p1RollScore = 0, p2RollScore = 0;
+                p1RollScore = getRollValue(dice, loadedDice, 0);
+                p2RollScore = getRollValue(dice, loadedDice, 1);
+
+                // update winner score
+                std::string winner;
+                winner = updatePlayerScore(p1RollScore, p2RollScore);
+
+                // display game results after each round
+                submenueReport(winner, p1RollScore, p2RollScore, round+1);
+
+                // end of round pause to view game report
+                cout << "\nHit [Enter] to continue\n";
+                cin.get();
+            }
+
+            // ask user if they want to play again and play again or quit
+            submenuReplay();
+            setSelection( validateNumber(1, 2) );
+            if (getSelection() == 2) {
+                // control statement to play again
+                submenuGameOver();
+                playAgain = false;
+            }
+            else {
+                playAgain = true;
+                setplayerOneScore(0);
+                setplayerTwoScore(0);
+            }
+
+        } while (playAgain);
+
+        // game has ended message
+        cout << "Game finished\n";
+    }
+    else if (getSelection() == 2) {
+        // user quit the program in the main menu and game quits
+        submenuGameOver();
+    }
+    else {
+        // error processing main menu input
+        cout << "Error processing your request!\n";
+    }
+
+}
+
 /*********************************************************************
 ** Description:     shows the start menu
 *********************************************************************/
