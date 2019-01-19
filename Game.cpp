@@ -29,9 +29,6 @@ void Game::playGame() {
     setSelection(validateNumber(1,2));
 
     if (getSelection() == 1) {
-        // track if player wants to play again
-
-
         // user plays the game
         cout << "\nStarting Game\n\n";
         do {
@@ -184,7 +181,6 @@ void Game::submenuDiceType(int player) {
          << "\n1. Normal Dice\n"
          << "2. Loaded Dice\n"
          << ">> ";
-
 }
 
 /*********************************************************************
