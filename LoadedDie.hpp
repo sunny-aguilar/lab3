@@ -13,7 +13,6 @@
 #define LOADEDDIE_HPP
 
 #include "Die.hpp"
-#include <ctime>
 
 class LoadedDie : public Die {
 public:
