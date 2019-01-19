@@ -3,8 +3,9 @@
 ** Date:            Jan 2019
 ** Description:     This dice class creates an object that has a
 **                  member function that returns a random integer from
-**                  1 to N. Includes setter/getters for N. Die class
-**                  is the base class for LoadedDie class.
+**                  1 to N (this function is over ridden by the
+**                  LoadedDie class). Includes setter/getters for N.
+**                  Die class is the base class for LoadedDie class.
 *********************************************************************/
 #include "Die.hpp"
 
