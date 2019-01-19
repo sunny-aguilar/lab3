@@ -52,7 +52,7 @@ public:
     string updatePlayerScore(int p1Roll, int p2Roll);   // update player scores
     int getplayerOneScore();                    // getter for player one score
     int getplayerTwoScore();                    // getter for player two score
-    void submenueReport(std::string winner, int p1Roll, int p2Roll, int round);
+    void submenuReport(std::string winner, int p1Roll, int p2Roll, int round);
     bool replay();
 
     void submenuReplay();                       // show replay menu

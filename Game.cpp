@@ -409,7 +409,7 @@ int Game::getplayerTwoScore() {
 /*********************************************************************
 ** Description:    displays detailed results of each round
 *********************************************************************/
-void Game::submenueReport(string winner, int p1Roll, int p2Roll, int round) {
+void Game::submenuReport(string winner, int p1Roll, int p2Roll, int round) {
     cout << "/******************************************/\n"
          << "      Round #" << round << "- Winner & Score Report\n"
          << "/******************************************/\n"
