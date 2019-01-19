@@ -4,8 +4,9 @@
 ** Description:     This class is a subclass of the Die class. This
 **                  dice subclass creates an object that has a
 **                  member function that returns a random integer from
-**                  1 to N. However, it is loaded because the odds of
-**                  rolling a higher value are greater.
+**                  1 to N (over-rides base class member function).
+**                  However, it is loaded because the odds of rolling
+**                   a higher value are greater.
 *********************************************************************/
 #include "LoadedDie.hpp"
 
@@ -24,8 +25,9 @@ LoadedDie::LoadedDie(int num) : Die{num} {}
 /*********************************************************************
 ** Description:     this function returns an integer from 1 to N where
 **                  the average output of rolling it several times is
-**                  higher that of a Die object with the same number
-**                  of sides. Algorithm explanation below.
+**                  higher than that of a Die object with the same
+**                  number of sides. Over-rides base class member
+**                  function Algorithm explanation below.
 *********************************************************************/
 int LoadedDie::randomInt() {
     // algorithm: create a vector with a total number of elements that
