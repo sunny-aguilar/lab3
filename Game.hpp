@@ -42,10 +42,6 @@ public:
     Dice getDiceType(int player);               // getter for dice type
     void setSidesChosenDice(Die &obj1, LoadedDie &obj2, int min, int max); // setter
     void rollDice();
-
-
-
-
     int getRollValue(Die &obj1, LoadedDie &obj2, int player);   // get roll
     void setplayerOneScore(int score);          // setter for player 1 score
     void setplayerTwoScore(int score);          // setter for player 2 score
@@ -54,7 +50,6 @@ public:
     int getplayerTwoScore();                    // getter for player two score
     void submenuReport(std::string winner, int p1Roll, int p2Roll, int round);
     bool replay();
-
     void submenuReplay();                       // show replay menu
     void submenuGameOver();                     // show game over menu
 

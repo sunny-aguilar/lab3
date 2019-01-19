@@ -24,9 +24,18 @@ Game::Game() :
     playerTwoScore{0} {
 }
 
+/*********************************************************************
+** Description:     this function is called from main to get the game
+**                  started.
+*********************************************************************/
 void Game::playGame() {
+    const int MIN_VAL = 1, MAX_VAL = 2;
+    const int MIN_ROUNDS = 1, MAX_ROUNDS = 1000;
+    const int MIN_SIDES = 3, MAX_SIDES = 20;
+
+    // show start menu
     showStartMenu();
-    setSelection(validateNumber(1,2));
+    setSelection(validateNumber(MIN_VAL,MAX_VAL));
 
     if (getSelection() == 1) {
         // user plays the game
@@ -34,7 +43,7 @@ void Game::playGame() {
         do {
             // prompt user to enter rounds and validate it
             submenuRounds();
-            setRounds( validateNumber(1, 1000) );
+            setRounds( validateNumber(MIN_ROUNDS, MAX_ROUNDS) );
 
             //  ask user the type of die for each player
             for (int player = 0; player < 2; player++) {
@@ -44,7 +53,7 @@ void Game::playGame() {
             }
 
             // ask user for number of sides for dice of both players
-            setSidesChosenDice(dice, loadedDice, 3, 20);
+            setSidesChosenDice(dice, loadedDice, MIN_SIDES, MAX_SIDES);
 
             // loop through the rounds to play
             rollDice();
@@ -93,8 +102,8 @@ int Game::getSelection() {
 /*********************************************************************
 ** Description:     general validator where the parameters are the
 **                  min and max numbers acceptable. Checks user input
- *                  for non-digit characters, number of digits entered,
- *                  and if within valid range.
+**                  for non-digit characters, number of digits entered,
+**                  and if within valid range.
 *********************************************************************/
 int Game::validateNumber(int min, int max) {
     char choice[100];
