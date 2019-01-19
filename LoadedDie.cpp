@@ -9,7 +9,6 @@
 *********************************************************************/
 #include "LoadedDie.hpp"
 
-
 /*********************************************************************
 ** Description:     no-args default constructor that also calls the
 **                  base class no-args constructor0
@@ -20,7 +19,6 @@ LoadedDie::LoadedDie() : Die{} {};
 ** Description:     1-arg constructor that calls the base class 1-arg
 **                  constructors
 *********************************************************************/
-
 LoadedDie::LoadedDie(int num) : Die{num} {}
 
 /*********************************************************************

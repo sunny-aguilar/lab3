@@ -3,12 +3,12 @@
 ** Date:            Jan 2019
 ** Description:     Game class implements the dice-rolling game. It
 **                  sets the game elements such as showing menus,
- *                  validating user data, as well as keeping score.
- *                  The game class is not derived from and it is not
- *                  derived. Internal functions are labeled as private.
- *                  The class protected variables are used to set the
- *                  games parameters such as rounds to play and type of
- *                  dice to use .
+**                  validating user data, as well as keeping score.
+**                  The game class is not derived from and it is not
+**                  derived. Internal functions are labeled as private.
+**                  The class protected variables are used to set the
+**                  games parameters such as rounds to play and type of
+**                  dice to use .
 *********************************************************************/
 #include "Game.hpp"
 
@@ -26,9 +26,15 @@ Game::Game() :
 
 /*********************************************************************
 ** Description:     this function is called from main to get the game
-**                  started.
+**                  started. Constant game variables are used to set
+**                  the parameters of the game. This function mainly
+**                  controls the game flow such as calling the
+**                  functions that set the game up, play the game,
+**                  and control whether the game continues or ends.
+**                  This is done by calling the appropriate functions.
 *********************************************************************/
 void Game::playGame() {
+    // constant game variables
     const int MIN_VAL = 1, MAX_VAL = 2;
     const int MIN_ROUNDS = 1, MAX_ROUNDS = 1000;
     const int MIN_SIDES = 3, MAX_SIDES = 20;
@@ -160,7 +166,7 @@ int Game::validateNumber(int min, int max) {
 }
 
 /*********************************************************************
-** Description:     asks user to enter the rounds to play
+** Description:     prompts user to enter the rounds to play
 *********************************************************************/
 void Game::submenuRounds() {
     cout << "How many rounds do you want to play?\n"
@@ -183,7 +189,7 @@ int Game::getRounds() {
 }
 
 /*********************************************************************
-** Description:     asks user to enter dice type for each player
+** Description:     prompts user to enter dice type for each player
 *********************************************************************/
 void Game::submenuDiceType(int player) {
     cout << "\nEnter the type of die to use for player #" << player
@@ -193,8 +199,8 @@ void Game::submenuDiceType(int player) {
 }
 
 /*********************************************************************
-** Description:     takes a bool parameter to indicate if dice is
-**                  loaded
+** Description:     takes in a player parameter and dice type in order
+**                  to set up the dice that each player will have
 *********************************************************************/
 void Game::setDiceType(const int player, const int type) {
     switch (type) {
@@ -210,7 +216,8 @@ void Game::setDiceType(const int player, const int type) {
 }
 
 /*********************************************************************
-** Description:     returns player dice type
+** Description:     takes in a player parameter and returns the
+**                  player's dice type
 *********************************************************************/
 Dice Game::getDiceType(const int player) {
     if (player <=2 && player >=0) {
