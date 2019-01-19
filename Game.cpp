@@ -51,13 +51,8 @@ void Game::playGame() {
 
             // loop through the rounds to play
             rollDice();
-
-
-            // ask user if they want to play again and play again or quit
-
-
-
-        } while (replay());
+            
+        } while (replay()); // ask user if they want to play again
 
         // game has ended message
         cout << "Game finished\n";
