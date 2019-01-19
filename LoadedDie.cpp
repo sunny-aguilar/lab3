@@ -32,8 +32,9 @@ LoadedDie::LoadedDie(int num) : Die{num} {}
 int LoadedDie::randomInt() {
     // algorithm: create a vector with a total number of elements that
     // is equal to the sum of the arithmetic sequence of N i.e., elements
-    // in vector should be equal to = (N + 1) / 2. The values pushed
-    // into the vector starts with one all they way up to N.
+    // in vector should be equal to = ((N + 1) * N) / 2. The values
+    // pushed into the vector starts with one all they way up to N,
+    // i.e.:
     // 1,       push 1, once
     // 22,      push 2, twice
     // 333,     push 3, three times
@@ -41,8 +42,11 @@ int LoadedDie::randomInt() {
     // 55555,   push 5, five times
     // 666666   push 6, six times
 
-    vector<int> loadedValues;               // create vector to hold values
-    int randomNum;                          // hold an unbiased, random value from 1 to N
+    // create vector to hold values
+    vector<int> loadedValues;
+
+    // hold an unbiased, random value from 1 to N
+    int randomNum;
 
     // vector elements is equal to the sum of an arithmetic sequence N
     int vectorElements = ((N + 1) * N) / 2;
