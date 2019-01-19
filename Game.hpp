@@ -40,7 +40,7 @@ public:
     void submenuDiceType(int player);           // show dice type menu
     void setDiceType(int player, int type);     // setter for dice typ
     Dice getDiceType(int player);               // getter for dice type
-    void setSidesChosenDice(Die &obj1, LoadedDie &obj2, int min, int max);        // setter
+    void setSidesChosenDice(Die &obj1, LoadedDie &obj2, int min, int max); // setter
     int getRollValue(Die &obj1, LoadedDie &obj2, int player);   // get roll
     void setplayerOneScore(int score);          // setter for player 1 score
     void setplayerTwoScore(int score);          // setter for player 2 score
