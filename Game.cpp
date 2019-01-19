@@ -280,7 +280,7 @@ void Game::rollDice() {
         winner = updatePlayerScore(p1RollScore, p2RollScore);
 
         // display game results after each round
-        submenueReport(winner, p1RollScore, p2RollScore, round+1);
+        submenuReport(winner, p1RollScore, p2RollScore, round+1);
 
         // end of round pause to view game report
         cout << "\nHit [Enter] to continue\n";
