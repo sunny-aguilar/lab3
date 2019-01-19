@@ -291,8 +291,7 @@ void Game::rollDice() {
 **                  parameters by reference and returns the resulting
 **                  value.
 *********************************************************************/
-int Game::getRollValue(Die &obj1, LoadedDie &obj2, int player)
-{
+int Game::getRollValue(Die &obj1, LoadedDie &obj2, int player) {
     // return a random integer from a normal dice
     if (getDiceType(player) == NORMAL) {
         if (player == 0) {
