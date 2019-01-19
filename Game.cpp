@@ -51,7 +51,6 @@ void Game::playGame() {
 
             // loop through the rounds to play
             rollDice();
-            
         } while (replay()); // ask user if they want to play again
 
         // game has ended message
@@ -65,7 +64,6 @@ void Game::playGame() {
         // error processing main menu input
         cout << "Error processing your request!\n";
     }
-
 }
 
 /*********************************************************************
@@ -452,6 +450,10 @@ void Game::submenueReport(string winner, int p1Roll, int p2Roll, int round) {
     }
 }
 
+/*********************************************************************
+** Description:     asks user if they want to play again and returns
+**                  bool value to play or quit
+*********************************************************************/
 bool Game::replay() {
     bool playAgain;
     submenuReplay();
