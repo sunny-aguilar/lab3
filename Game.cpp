@@ -50,24 +50,8 @@ void Game::playGame() {
             setSidesChosenDice(dice, loadedDice, 3, 20);
 
             // loop through the rounds to play
-            for (int round = 0; round < getRounds(); round++) {
+            rollDice();
 
-                // roll dice for player 1 and player 2 and assign values to variables
-                int p1RollScore = 0, p2RollScore = 0;
-                p1RollScore = getRollValue(dice, loadedDice, 0);
-                p2RollScore = getRollValue(dice, loadedDice, 1);
-
-                // update winner score
-                std::string winner;
-                winner = updatePlayerScore(p1RollScore, p2RollScore);
-
-                // display game results after each round
-                submenueReport(winner, p1RollScore, p2RollScore, round+1);
-
-                // end of round pause to view game report
-                cout << "\nHit [Enter] to continue\n";
-                cin.get();
-            }
 
             // ask user if they want to play again and play again or quit
             submenuReplay();
@@ -299,6 +283,36 @@ void Game::setSidesChosenDice(Die &obj1, LoadedDie &obj2, int minSides, int maxS
         }
     }
 }
+
+void Game::rollDice() {
+    for (int round = 0; round < getRounds(); round++) {
+
+        // roll dice for player 1 and player 2 and assign values to variables
+        int p1RollScore = 0, p2RollScore = 0;
+        p1RollScore = getRollValue(dice, loadedDice, 0);
+        p2RollScore = getRollValue(dice, loadedDice, 1);
+
+        // update winner score
+        std::string winner;
+        winner = updatePlayerScore(p1RollScore, p2RollScore);
+
+        // display game results after each round
+        submenueReport(winner, p1RollScore, p2RollScore, round+1);
+
+        // end of round pause to view game report
+        cout << "\nHit [Enter] to continue\n";
+        cin.get();
+    }
+}
+
+
+
+
+
+
+
+
+
 
 /*********************************************************************
 ** Description:     function returns a random int value from either a
