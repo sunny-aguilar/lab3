@@ -12,7 +12,6 @@
 *********************************************************************/
 #include "Game.hpp"
 
-
 /*********************************************************************
 ** Description:     no-args default constructor that sets the member
 **                  variables
