@@ -284,21 +284,12 @@ void Game::rollDice() {
     }
 }
 
-
-
-
-
-
-
-
-
-
 /*********************************************************************
 ** Description:     function returns a random int value from either a
 **                  normal die or a loaded die depending on the die
- *                  being used by the players. Takes Dice object
- *                  parameters by reference and returns the resulting
- *                  value.
+**                  being used by the players. Takes Dice object
+**                  parameters by reference and returns the resulting
+**                  value.
 *********************************************************************/
 int Game::getRollValue(Die &obj1, LoadedDie &obj2, int player)
 {
