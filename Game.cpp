@@ -242,7 +242,7 @@ void Game::submenuSides(const int player, int minSides, int maxSides) {
 }
 
 /*********************************************************************
-** Description:     param takes a dice object to set its sides
+** Description:     param takes a dice object to set its N sides
 **                  called internally by setSidesChosenDice(...
 *********************************************************************/
 void Game::setSides(Die &obj, int sides) {
@@ -250,7 +250,8 @@ void Game::setSides(Die &obj, int sides) {
 }
 
 /*********************************************************************
-** Description:     param takes a loaded dice object to set its sides
+** Description:     param takes a loaded dice object to set its N
+**                  sides, called internally by setSidesChosenDice(...
 *********************************************************************/
 void Game::setSides(LoadedDie &obj, int sides) {
     obj.setSides(sides);
@@ -279,6 +280,12 @@ void Game::setSidesChosenDice(Die &obj1, LoadedDie &obj2, int minSides, int maxS
     }
 }
 
+/*********************************************************************
+** Description:     this function rolls the dice repeating each round
+**                  to be played in a for-loop, assigns the scores
+**                  rolled, and calls another function to show the
+**                  score report.
+*********************************************************************/
 void Game::rollDice() {
     for (int round = 0; round < getRounds(); round++) {
 
