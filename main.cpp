@@ -13,11 +13,6 @@
 #include "Die.hpp"
 #include "LoadedDie.hpp"
 #include "Game.hpp"
-#include <iostream>
-#include <string>
-using std::cin;
-using std::cout;
-using std::endl;
 
 int main() {
     auto seed = static_cast<unsigned int>(time(nullptr));
