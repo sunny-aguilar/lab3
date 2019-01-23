@@ -435,10 +435,10 @@ void Game::submenuReport(string winner, int p1Roll, int p2Roll, int round) {
     for (int player = 0; player < 2; player++) {
         switch ( getDiceType(player) ) {
             case 1:
-                cout << "Player One is using a normal dice\n";
+                cout << "Player One is using a normal dice with " << dice.getSides() << " sides\n";
                 break;
             case 2:
-                cout << "Player Two is using a loaded dice\n";
+                cout << "Player Two is using a loaded dice with " << loadedDice.getSides() << " sides\n";
                 break;
             default:
                 cout << "Error showing dice being used!\n";
