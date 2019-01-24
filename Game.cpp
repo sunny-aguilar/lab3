@@ -58,8 +58,13 @@ void Game::playGame() {
                 setDiceType( player, getSelection() );
             }
 
+            // declare dice
+//            Die dice;
+//            LoadedDie loadedDice;
+
             // ask user for number of sides for dice of both players
             setSidesChosenDice(dice, loadedDice, MIN_SIDES, MAX_SIDES);
+
 
             // loop through the rounds to play
             rollDice();
@@ -214,6 +219,11 @@ void Game::setDiceType(const int player, const int type) {
             cout << "Error setting the dice type\n";
     }
 }
+
+
+
+
+
 
 /*********************************************************************
 ** Description:     takes in a player parameter and returns the
