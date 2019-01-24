@@ -39,10 +39,11 @@ public:
     int getRounds();                            // getter for rounds
     void submenuDiceType(int player);           // show dice type menu
     void setDiceType(int player, int type);     // setter for dice typ
+    void createDice();
     Dice getDiceType(int player);               // getter for dice type
-    void setSidesChosenDice(Die &obj1, LoadedDie &obj2, int min, int max); // setter
+    void setSidesChosenDice(int player, int min, int max); // setter
     void rollDice();
-    int getRollValue(Die &obj1, LoadedDie &obj2, int player);   // get roll
+    int getRollValue(Die *obj1, int player);   // get roll
     void setplayerOneScore(int score);          // setter for player 1 score
     void setplayerTwoScore(int score);          // setter for player 2 score
     string updatePlayerScore(int p1Roll, int p2Roll);   // update player scores
@@ -62,12 +63,14 @@ protected:
 
 private:
     void submenuSides(int player, int minSides, int maxSides); // internal use function
-    void setSides(Die &obj, int sides);         // setter for Die sides
+    void setSides(Die *obj, int sides, int player);         // setter for Die sides
     void setSides(LoadedDie &obj, int sides);   // setter for loadedDie sides
     void addplayerOneScore();                   // increase to player 1 score
     void addplayerTwoScore();                   // increase player 2 score
-    Die dice;
-    LoadedDie loadedDice;
+//    Die dice;
+//    LoadedDie loadedDice;
+    Die *diceP1;
+    Die *diceP2;
 };
 
 #endif

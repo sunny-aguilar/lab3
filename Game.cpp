@@ -56,6 +56,7 @@ void Game::playGame() {
                 submenuDiceType(player+1);
                 setSelection( validateNumber(1, 2) );
                 setDiceType( player, getSelection() );
+                createDice();
             }
 
             // declare dice
@@ -63,9 +64,10 @@ void Game::playGame() {
 //            LoadedDie loadedDice;
 
             // ask user for number of sides for dice of both players
-            setSidesChosenDice(dice, loadedDice, MIN_SIDES, MAX_SIDES);
+            setSidesChosenDice(1,  MIN_SIDES, MAX_SIDES);
+            setSidesChosenDice(2,  MIN_SIDES, MAX_SIDES);
 
-
+            cout << "CODE REACHED";
             // loop through the rounds to play
             rollDice();
         } while (replay()); // ask user if they want to play again
@@ -208,20 +210,51 @@ void Game::submenuDiceType(int player) {
 **                  to set up the dice that each player will have
 *********************************************************************/
 void Game::setDiceType(const int player, const int type) {
+    cout << "setDiceType Player# " << player << endl;
     switch (type) {
         case 1:
             diceType[player] = NORMAL;
+            if (player == 0) {
+                diceP1 = new Die();
+                cout << "P1 Sides " << diceP1->getSides() << endl;
+            }
+            else if (player == 1) {
+                diceP2 = new Die();
+                cout << "P2 Sides " << diceP2->getSides() << endl;
+            }
             break;
         case 2:
             diceType[player] = LOADED;
+            if (player == 1) {
+                diceP1 = new LoadedDie();
+                cout << "P2 Sides " << diceP1->getSides() << endl;
+            }
+            else if (player == 2) {
+                diceP2 = new LoadedDie();
+                cout << "P2 Sides " << diceP2->getSides() << endl;
+            }
             break;
         default:
             cout << "Error setting the dice type\n";
     }
 }
 
+/*********************************************************************
+** Description:     d
+**                  d
+*********************************************************************/
+void Game::createDice() {
+//    for (int player = 0; player < 2; player++) {
+//        if (diceType[0] == NORMAL) {
+//                dicePtr[0] = new Die();
+//        }
+//        else if (diceType[1] == LOADED) {
+//
+//        }
+//    }
 
 
+}
 
 
 
@@ -255,8 +288,8 @@ void Game::submenuSides(const int player, int minSides, int maxSides) {
 ** Description:     param takes a dice object to set its N sides
 **                  called internally by setSidesChosenDice(...
 *********************************************************************/
-void Game::setSides(Die &obj, int sides) {
-    obj.setSides(sides);
+void Game::setSides(Die *obj, int sides, int player) {
+    obj->setSides(sides);
 }
 
 /*********************************************************************
@@ -271,23 +304,31 @@ void Game::setSides(LoadedDie &obj, int sides) {
 ** Description:     parameters take two objects by reference of each
 **                  type of die class object to set the number of sides
 *********************************************************************/
-void Game::setSidesChosenDice(Die &obj1, LoadedDie &obj2, int minSides, int maxSides) {
-    for (int player = 0; player < 2; player++) {
+void Game::setSidesChosenDice(int player, int minSides, int maxSides) {
+//    for (int player = 0; player < 2; player++) {
         // internal private member function call that displays menu
         // asking user to enter total sides on dice
-        submenuSides(player+1, minSides, maxSides);
+//    }
+    submenuSides(player, minSides, maxSides);
+    diceP1->setSides(validateNumber(minSides, maxSides));
+    cout << "diceP1 sides " << diceP1->getSides() << endl;
+
+    submenuSides(player, minSides, maxSides);
+    cout << "diceP2 current sides " << diceP2->getSides() << endl;
+    diceP2->setSides(validateNumber(minSides, maxSides));
+//    setSides(obj, validateNumber(minSides, maxSides), player);
 
         // check each player's chosen dice type and set its sides
-        if (getDiceType(player) == NORMAL) {
-            setSides( obj1, validateNumber(minSides, maxSides) );
-        }
-        else if (getDiceType(player) == LOADED) {
-            setSides( obj2, validateNumber(minSides, maxSides) );
-        }
-        else {
-            cout << "Error setting the number of sides!\n";
-        }
-    }
+//        if (getDiceType(player) == NORMAL) {
+//            setSides( obj1, validateNumber(minSides, maxSides) );
+//        }
+//        else if (getDiceType(player) == LOADED) {
+//            setSides( obj2, validateNumber(minSides, maxSides) );
+//        }
+//        else {
+//            cout << "Error setting the number of sides!\n";
+//        }
+
 }
 
 /*********************************************************************
@@ -301,8 +342,8 @@ void Game::rollDice() {
 
         // roll dice for player 1 and player 2 and assign values to variables
         int p1RollScore = 0, p2RollScore = 0;
-        p1RollScore = getRollValue(dice, loadedDice, 0);
-        p2RollScore = getRollValue(dice, loadedDice, 1);
+        p1RollScore = getRollValue(diceP1, 0);
+        p2RollScore = getRollValue(diceP2, 1);
 
         // update winner score
         std::string winner;
@@ -324,25 +365,25 @@ void Game::rollDice() {
 **                  parameters by reference and returns the resulting
 **                  value.
 *********************************************************************/
-int Game::getRollValue(Die &obj1, LoadedDie &obj2, int player) {
+int Game::getRollValue(Die *obj1, int player) {
     // return a random integer from a normal dice
     if (getDiceType(player) == NORMAL) {
         if (player == 0) {
-            return obj1.randomInt();
+            return obj1->randomInt();
         }
         else if (player == 1) {
-            return obj1.randomInt();
+            return obj1->randomInt();
         }
     }
     // return a random but loaded integer
-    else if (getDiceType(player) == LOADED) {
-        if (player == 0) {
-            return obj2.randomInt();
-        }
-        else if (player == 1) {
-            return obj2.randomInt();
-        }
-    }
+//    else if (getDiceType(player) == LOADED) {
+//        if (player == 0) {
+//            return obj2.randomInt();
+//        }
+//        else if (player == 1) {
+//            return obj2.randomInt();
+//        }
+//    }
     else {
         // error message if error in getting dice type
         cout << "Error getting roll value!\n";
@@ -445,10 +486,10 @@ void Game::submenuReport(string winner, int p1Roll, int p2Roll, int round) {
     for (int player = 0; player < 2; player++) {
         switch ( getDiceType(player) ) {
             case 1:
-                cout << "Player One is using a normal dice with " << dice.getSides() << " sides\n";
+                cout << "Player One is using a normal dice with " << diceP1->getSides() << " sides\n";
                 break;
             case 2:
-                cout << "Player Two is using a loaded dice with " << loadedDice.getSides() << " sides\n";
+                cout << "Player Two is using a loaded dice with " << diceP2->getSides() << " sides\n";
                 break;
             default:
                 cout << "Error showing dice being used!\n";
