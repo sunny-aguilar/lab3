@@ -61,7 +61,7 @@ protected:
     int playerTwoScore;                         // hold player2 score
 
 private:
-    void submenuSides(int player, int minSides, int maxSides); // internal use function
+    void submenuSides(int minSides, int maxSides); // internal use function
     void setSides(Die &obj, int sides);         // setter for Die sides
     void setSides(LoadedDie &obj, int sides);   // setter for loadedDie sides
     void addplayerOneScore();                   // increase to player 1 score

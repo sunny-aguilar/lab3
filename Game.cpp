@@ -58,13 +58,8 @@ void Game::playGame() {
                 setDiceType( player, getSelection() );
             }
 
-            // declare dice
-//            Die dice;
-//            LoadedDie loadedDice;
-
             // ask user for number of sides for dice of both players
             setSidesChosenDice(dice, loadedDice, MIN_SIDES, MAX_SIDES);
-
 
             // loop through the rounds to play
             rollDice();
@@ -140,7 +135,7 @@ int Game::validateNumber(int min, int max) {
 
         // check if all characters entered are digits
         isNotDigit = false;
-        for (int i = 0; i < strlen(choice); i++) {
+        for (unsigned i = 0; i < strlen(choice); i++) {
             // if digit is not a digit, then set it true so that
             // loop will repeat
             if (!isdigit(choice[i])) {
@@ -220,11 +215,6 @@ void Game::setDiceType(const int player, const int type) {
     }
 }
 
-
-
-
-
-
 /*********************************************************************
 ** Description:     takes in a player parameter and returns the
 **                  player's dice type
@@ -244,11 +234,10 @@ Dice Game::getDiceType(const int player) {
 **                  that identify the player it is asking for display
 **                  purposes.
 *********************************************************************/
-void Game::submenuSides(const int player, int minSides, int maxSides) {
-    cout << "\nEnter the number of sides on the dice\n"
-         << "for player #" << player << " - min "
+void Game::submenuSides(int minSides, int maxSides) {
+    cout << "\nEnter the number of sides on the dice\n" << "(min "
          << minSides << " max " << maxSides
-         << "\n>> ";
+         << ")\n>> ";
 }
 
 /*********************************************************************
@@ -272,17 +261,18 @@ void Game::setSides(LoadedDie &obj, int sides) {
 **                  type of die class object to set the number of sides
 *********************************************************************/
 void Game::setSidesChosenDice(Die &obj1, LoadedDie &obj2, int minSides, int maxSides) {
+    submenuSides(minSides, maxSides);
+    int selection = validateNumber(minSides, maxSides);
     for (int player = 0; player < 2; player++) {
         // internal private member function call that displays menu
         // asking user to enter total sides on dice
-        submenuSides(player+1, minSides, maxSides);
 
         // check each player's chosen dice type and set its sides
         if (getDiceType(player) == NORMAL) {
-            setSides( obj1, validateNumber(minSides, maxSides) );
+            setSides( obj1, selection );
         }
         else if (getDiceType(player) == LOADED) {
-            setSides( obj2, validateNumber(minSides, maxSides) );
+            setSides( obj2, selection);
         }
         else {
             cout << "Error setting the number of sides!\n";
