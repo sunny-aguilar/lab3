@@ -301,9 +301,9 @@ void Game::rollDice() {
         // display game results after each round
         submenuReport(winner, p1RollScore, p2RollScore, round+1);
 
-        // end of round pause to view game report
-        cout << "\nHit [Enter] to continue\n";
-        cin.get();
+        // DEBUGGING - end of round pause to view game report
+        // cout << "\nHit [Enter] to continue\n";
+        // cin.get();
     }
 }
 
@@ -338,7 +338,7 @@ int Game::getRollValue(Die &obj1, LoadedDie &obj2, int player) {
         cout << "Error getting roll value!\n";
         return 0;
     }
-    
+
     // unused return value
     return 0;
 }
@@ -461,6 +461,7 @@ void Game::submenuReport(string winner, int p1Roll, int p2Roll, int round) {
             cout << "GAME IS A TIE!\n";
         }
     }
+    cout << endl << endl;
 }
 
 /*********************************************************************
