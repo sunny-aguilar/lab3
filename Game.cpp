@@ -338,6 +338,9 @@ int Game::getRollValue(Die &obj1, LoadedDie &obj2, int player) {
         cout << "Error getting roll value!\n";
         return 0;
     }
+    
+    // unused return value
+    return 0;
 }
 
 /*********************************************************************
